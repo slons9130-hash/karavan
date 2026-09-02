@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кафе-столовая «Караван» в Новоселье — домашняя кухня, мангал, обеды в офис</title>
+<meta name="description" content="Кафе-столовая «Караван» в Новоселье: домашняя кухня, ароматный мангал и доставка обедов в офис. Сытно, вкусно, как дома.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://image.qwenlm.ai">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&family=Cormorant:wght@500;600;700&display=swap" rel="stylesheet">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t);k.async=1;k.src=r;m[i].src=r;e.head.appendChild(k);
+})(window, document, "script", "https://mc.yandex.ru/watch/101026698", "ym");
+ym(101026698, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/101026698" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<style>
+:root{
+  --bg:#0b0908; --card:#1a1512;
+  --line:rgba(246,236,220,.12);
+  --cream:#f6efe3; --muted:#b3a48e;
+  --amber:#f2a33c; --amber-2:#ffcf6e; --fire:#e2622b;
+  --grad:linear-gradient(135deg,#ffcf6e 0%,#f2a33c 45%,#e2622b 100%);
+  --display:'Cormorant',serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:'Manrope',sans-serif;overflow-x:hidden;line-height:1.6}
+::selection{background:rgba(242,163,60,.35);color:#fff}
+h1,h2,h3{font-family:var(--display);line-height:1.12;font-weight:600}
+section{scroll-margin-top:100px}
+img{display:block;max-width:100%}
+@media (hover:hover) and (pointer:fine){ body, body a, body button{cursor:none} }
+
+.bg-glow{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bg-glow::before,.bg-glow::after{content:'';position:absolute;border-radius:50%;filter:blur(130px);opacity:.28}
+.bg-glow::before{width:60vw;height:60vw;top:-25vw;left:-15vw;background:radial-gradient(circle,#7a4a14,transparent 65%);animation:glowDrift 20s ease-in-out infinite alternate}
+.bg-glow::after{width:55vw;height:55vw;bottom:-25vw;right:-15vw;background:radial-gradient(circle,#5c1f0a,transparent 65%);animation:glowDrift 24s ease-in-out infinite alternate-reverse}
+@keyframes glowDrift{from{transform:translate(0,0) scale(1)}to{transform:translate(6vw,4vh) scale(1.15)}}
+.grain{position:fixed;inset:-50%;z-index:9000;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grainShift 1.2s steps(4) infinite}
+@keyframes grainShift{0%{transform:translate(0,0)}25%{transform:translate(-2%,1%)}50%{transform:translate(1%,-2%)}75%{transform:translate(-1%,2%)}100%{transform:translate(0,0)}}
+
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;border-radius:50%;transform:translate(-50%,-50%)}
+.cursor-dot{width:7px;height:7px;background:var(--amber-2);box-shadow:0 0 12px rgba(255,207,110,.8)}
+.cursor-ring{width:38px;height:38px;border:1.5px solid rgba(242,163,60,.55);transition:width .25s,height .25s,border-color .25s,background .25s}
+.cursor-ring.big{width:66px;height:66px;border-color:rgba(255,207,110,.9);background:rgba(242,163,60,.08)}
+@media (hover:none){.cursor-dot,.cursor-ring{display:none}}
+
+.progress-bar{position:fixed;top:0;left:0;height:2px;width:100%;z-index:2000;background:var(--grad);transform-origin:0 50%;transform:scaleX(0)}
+#preloader{position:fixed;inset:0;z-index:10000;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;transition:opacity .6s ease,visibility .6s}
+#preloader.done{opacity:0;visibility:hidden}
+.pre-logo{font-family:var(--display);font-weight:700;font-size:clamp(34px,6vw,56px);letter-spacing:.3em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;animation:preGlow 1.6s ease-in-out infinite alternate}
+@keyframes preGlow{from{opacity:.5;filter:blur(1px)}to{opacity:1;filter:blur(0)}}
+.pre-line{width:min(280px,60vw);height:1px;background:rgba(255,255,255,.08);overflow:hidden;border-radius:2px}
+.pre-line span{display:block;height:100%;width:100%;background:var(--grad);transform-origin:left;animation:preLine 1.2s ease forwards}
+@keyframes preLine{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+header{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px clamp(20px,4vw,48px);transition:padding .35s,background .35s,border-color .35s;border-bottom:1px solid transparent}
+header.scrolled{padding:12px clamp(20px,4vw,48px);background:rgba(11,9,8,.78);backdrop-filter:blur(18px);border-bottom-color:var(--line)}
+.logo{font-family:'Unbounded';font-weight:700;font-size:17px;letter-spacing:.14em;color:var(--cream);text-decoration:none;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.logo-mark{width:30px;height:30px;border-radius:9px;background:var(--grad);display:grid;place-items:center;color:#241203;font-size:15px;box-shadow:0 6px 18px -6px rgba(242,163,60,.7)}
+header nav{display:flex;gap:30px}
+header nav a{color:var(--muted);text-decoration:none;font-size:14.5px;font-weight:600;position:relative;transition:color .3s}
+header nav a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--grad);border-radius:2px;transition:width .35s}
+header nav a:hover{color:var(--cream)} header nav a:hover::after{width:100%}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;z-index:5;padding:6px}
+.burger span{width:24px;height:2px;background:var(--cream);border-radius:2px;transition:.3s}
+
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;padding:16px 32px;border-radius:100px;font-family:'Manrope';font-weight:800;font-size:15px;letter-spacing:.02em;text-decoration:none;border:none;transition:transform .3s,box-shadow .3s,border-color .3s,color .3s;overflow:hidden;white-space:nowrap}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:var(--grad);color:#241203;box-shadow:0 12px 34px -10px rgba(242,163,60,.55)}
+.btn-primary:hover{box-shadow:0 16px 44px -8px rgba(242,163,60,.75)}
+.btn-primary::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);transform:translateX(-130%);transition:transform .8s ease}
+.btn-primary:hover::after{transform:translateX(130%)}
+.btn-ghost{border:1px solid rgba(246,239,227,.35);color:var(--cream);background:rgba(11,9,8,.35);backdrop-filter:blur(8px)}
+.btn-ghost:hover{border-color:var(--amber);color:var(--amber-2)}
+.btn-small{padding:12px 22px;font-size:13.5px}
+
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;overflow:hidden;z-index:1}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;animation:kenburns 22s ease-in-out infinite alternate;filter:saturate(1.1) contrast(1.08) brightness(.95)}
+@keyframes kenburns{from{transform:scale(1.05)}to{transform:scale(1.16)}}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,9,8,.6) 0%,rgba(11,9,8,.35) 40%,rgba(11,9,8,.9) 80%,var(--bg) 100%),radial-gradient(80% 60% at 50% 45%,transparent 30%,rgba(11,9,8,.55) 100%)}
+.embers{position:absolute;inset:0;pointer-events:none;z-index:2}
+.embers span{position:absolute;bottom:-12px;border-radius:50%;background:radial-gradient(circle,#ffcf6e,#e2622b 70%,transparent);filter:blur(.6px);opacity:0;animation:emberUp linear infinite}
+@keyframes emberUp{0%{transform:translate(0,0);opacity:0}8%{opacity:.9}85%{opacity:.5}100%{transform:translate(var(--drift,20px),-92vh);opacity:0}}
+.hero-inner{position:relative;z-index:3;width:100%;max-width:1260px;margin:0 auto;padding:170px clamp(20px,4vw,48px) 110px;text-align:center}
+.hero-label{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--amber-2);border:1px solid rgba(242,163,60,.45);padding:9px 18px;border-radius:100px;background:rgba(11,9,8,.5);backdrop-filter:blur(8px);margin-bottom:28px}
+.hero-label::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px var(--amber);animation:dotPulse 1.8s ease-in-out infinite}
+@keyframes dotPulse{50%{transform:scale(1.6);opacity:.6}}
+.hero-title{font-family:var(--display);font-size:clamp(64px,13vw,164px);font-weight:700;letter-spacing:.08em;line-height:1;margin-bottom:26px}
+.hero-title span{display:inline-block;opacity:0;transform:translateY(70px) rotate(7deg);background:linear-gradient(180deg,#ffe9bd 0%,#ffcf6e 35%,#f2a33c 70%,#c9591f 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 18px 40px rgba(0,0,0,.6))}
+body.loaded .hero-title span{animation:letterIn .9s cubic-bezier(.2,.75,.2,1) forwards;animation-delay:calc(.3s + var(--i)*.06s)}
+@keyframes letterIn{to{opacity:1;transform:translateY(0) rotate(0)}}
+.hero-sub{max-width:640px;margin:0 auto 32px;color:rgba(246,239,227,.9);font-size:clamp(15px,1.7vw,19px);text-shadow:0 2px 18px rgba(0,0,0,.75)}
+.hero-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:38px}
+.chip{display:inline-flex;align-items:center;gap:9px;padding:10px 18px;border-radius:100px;border:1px solid rgba(246,239,227,.22);background:rgba(11,9,8,.55);font-size:13.5px;font-weight:700;color:var(--cream);backdrop-filter:blur(8px);transition:.3s}
+.chip svg{width:16px;height:16px;color:var(--amber)}
+.chip:hover{border-color:rgba(242,163,60,.6);transform:translateY(-3px);box-shadow:0 12px 26px -12px rgba(242,163,60,.5)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.scroll-hint{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--muted);font-size:11px;letter-spacing:.28em;text-transform:uppercase;text-decoration:none}
+.scroll-hint i{width:1px;height:44px;background:linear-gradient(180deg,var(--amber),transparent);display:block;animation:hintDrop 1.8s ease-in-out infinite;transform-origin:top}
+@keyframes hintDrop{0%{transform:scaleY(0)}45%{transform:scaleY(1)}100%{transform:scaleY(0);transform-origin:bottom}}
+
+.marquee{position:relative;z-index:2;overflow:hidden;padding:20px 0;border-block:1px solid var(--line);background:rgba(255,255,255,.015)}
+.marquee-track{display:flex;width:max-content;animation:marqueeX 26s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span{font-family:'Unbounded';font-weight:500;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);padding:0 26px;display:flex;align-items:center;gap:26px;white-space:nowrap}
+.marquee-track span b{color:var(--amber);font-weight:400}
+@keyframes marqueeX{to{transform:translateX(-50%)}}
+.gallery{position:relative;z-index:2;overflow:hidden;padding:26px 0;border-block:1px solid var(--line);background:rgba(255,255,255,.015)}
+.gal-track{display:flex;gap:18px;width:max-content;animation:marqueeX 46s linear infinite;padding:4px}
+.gallery:hover .gal-track{animation-play-state:paused}
+.gal-track figure{position:relative;width:300px;height:200px;border-radius:18px;overflow:hidden;border:1px solid var(--line);flex:none;transition:.4s}
+.gal-track figure:hover{border-color:rgba(242,163,60,.55);transform:scale(1.04) rotate(-1deg)}
+.gal-track img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.gal-track figure:hover img{transform:scale(1.12)}
+.gal-track figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 10px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);background:linear-gradient(180deg,transparent,rgba(11,9,8,.85))}
+
+.section{position:relative;z-index:1;max-width:1260px;margin:0 auto;padding:110px clamp(20px,4vw,48px)}
+.section-head{text-align:center;max-width:760px;margin:0 auto 64px}
+.s-label{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:var(--amber);margin-bottom:16px}
+.s-title{font-family:var(--display);font-size:clamp(34px,5.4vw,56px);font-weight:600}
+.s-title em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.s-sub{margin-top:16px;color:var(--muted)}
+.reveal{opacity:0;transform:translateY(46px);filter:blur(6px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1),filter .9s}
+.reveal.visible{opacity:1;transform:translateY(0);filter:blur(0)}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-photo{position:relative}
+.about-frame{position:relative;border-radius:28px;overflow:hidden;border:1px solid rgba(242,163,60,.3);box-shadow:0 40px 90px -30px rgba(0,0,0,.85),0 0 70px -26px rgba(242,163,60,.35);aspect-ratio:4/5;transform-style:preserve-3d;transition:transform .4s ease}
+.about-frame img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.about-frame:hover img{transform:scale(1.08)}
+.about-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(200deg,transparent 55%,rgba(11,9,8,.75));pointer-events:none}
+.about-badge{position:absolute;display:flex;align-items:center;gap:10px;padding:14px 20px;border-radius:18px;background:rgba(26,21,18,.92);border:1px solid var(--line);backdrop-filter:blur(10px);font-size:13px;font-weight:800;box-shadow:0 20px 50px -18px rgba(0,0,0,.8);animation:chipFloat 5.5s ease-in-out infinite;z-index:3}
+.about-badge svg{width:18px;height:18px;color:var(--amber)}
+.about-badge.b1{top:6%;right:-4%}
+.about-badge.b2{bottom:8%;left:-4%;animation-delay:1.6s}
+@keyframes chipFloat{50%{transform:translateY(-14px) rotate(-2deg)}}
+.about-copy h2{font-size:clamp(34px,4.6vw,50px);margin-bottom:22px}
+.about-copy h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.about-copy>p{color:var(--muted);margin-bottom:28px}
+.mini-feats{list-style:none;display:grid;gap:18px}
+.mini-feats li{display:flex;gap:16px;align-items:flex-start}
+.mini-feats .f-icon{width:52px;height:52px;border-radius:16px;margin:0;flex:none}
+.mini-feats b{display:block;font-size:15.5px;margin-bottom:4px}
+.mini-feats p{color:var(--muted);font-size:14px}
+.f-icon{width:64px;height:64px;border-radius:20px;display:grid;place-items:center;margin-bottom:26px;background:rgba(242,163,60,.09);border:1px solid rgba(242,163,60,.3);color:var(--amber)}
+.f-icon svg{width:26px;height:26px}
+
+.stats{position:relative;z-index:1;border-block:1px solid var(--line);background:linear-gradient(90deg,transparent,rgba(242,163,60,.05),transparent)}
+.stats-grid{max-width:1260px;margin:0 auto;padding:56px clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
+.stat-num{font-family:var(--display);font-weight:700;font-size:clamp(38px,4.6vw,60px);background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat-label{margin-top:8px;color:var(--muted);font-size:14px;font-weight:600}
+
+.tabs{display:flex;gap:8px;width:max-content;max-width:100%;flex-wrap:wrap;justify-content:center;margin:0 auto 46px;padding:6px;border-radius:100px;background:rgba(255,255,255,.04);border:1px solid var(--line)}
+.tab-btn{display:inline-flex;align-items:center;gap:9px;border:none;background:transparent;color:var(--muted);font-family:'Manrope';font-weight:800;font-size:14.5px;padding:12px 24px;border-radius:100px;cursor:pointer;transition:.35s}
+.tab-btn svg{width:17px;height:17px}
+.tab-btn:hover{color:var(--cream)}
+.tab-btn.active{background:var(--grad);color:#241203;box-shadow:0 8px 24px -8px rgba(242,163,60,.6)}
+.menu-panel{display:none;grid-template-columns:repeat(3,1fr);gap:22px}
+.menu-panel.active{display:grid}
+.dish-card{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.012));transition:transform .4s,border-color .4s,box-shadow .4s;transform-style:preserve-3d;will-change:transform}
+.menu-panel.active .dish-card{animation:dishIn .6s cubic-bezier(.2,.7,.2,1) both}
+.menu-panel.active .dish-card:nth-child(1){animation-delay:.04s}.menu-panel.active .dish-card:nth-child(2){animation-delay:.09s}.menu-panel.active .dish-card:nth-child(3){animation-delay:.14s}.menu-panel.active .dish-card:nth-child(4){animation-delay:.19s}.menu-panel.active .dish-card:nth-child(5){animation-delay:.24s}.menu-panel.active .dish-card:nth-child(6){animation-delay:.29s}.menu-panel.active .dish-card:nth-child(7){animation-delay:.34s}.menu-panel.active .dish-card:nth-child(8){animation-delay:.39s}.menu-panel.active .dish-card:nth-child(9){animation-delay:.44s}
+@keyframes dishIn{from{opacity:0;transform:translateY(30px) scale(.97)}to{opacity:1;transform:none}}
+.dish-card:hover{border-color:rgba(242,163,60,.45);box-shadow:0 26px 60px -24px rgba(226,98,43,.45)}
+.dish-img{position:relative;aspect-ratio:4/3;overflow:hidden}
+.dish-img img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1);filter:saturate(1.08)}
+.dish-card:hover .dish-img img{transform:scale(1.1)}
+.dish-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(11,9,8,.72))}
+.dish-price{position:absolute;top:14px;right:14px;z-index:2;padding:8px 16px;border-radius:100px;background:rgba(11,9,8,.72);backdrop-filter:blur(8px);border:1px solid rgba(242,163,60,.5);color:var(--amber-2);font-family:'Unbounded';font-size:13px;font-weight:700}
+.dish-body{padding:22px 24px 26px}
+.dish-name{font-family:'Unbounded';font-size:16px;font-weight:500;margin-bottom:8px}
+.dish-desc{color:var(--muted);font-size:13.5px}
+.dish-weight{color:rgba(179,164,142,.7);font-size:12px}
+.dish-card.wide{grid-column:1/-1;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;background:linear-gradient(120deg,#221810,#150e08)}
+.dish-card.wide .dish-body{padding:36px 40px}
+.dish-card.wide .dish-body h3{font-size:clamp(24px,2.8vw,32px);margin-bottom:10px}
+.dish-card.wide .dish-body p{color:var(--muted);margin-bottom:20px;max-width:520px}
+.dish-card.wide .dish-img{aspect-ratio:auto;height:100%;min-height:260px}
+
+.parallax{position:relative;z-index:1;min-height:62vh;display:grid;place-items:center;text-align:center;overflow:hidden;background:url('https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/59203cf69-6df5-4304-9e8a-9016f1d9f5e01648.png') center/cover}
+.parallax::before{content:'';position:absolute;inset:0;background:rgba(11,9,8,.6)}
+.parallax blockquote{position:relative;max-width:820px;padding:90px clamp(20px,4vw,48px)}
+.parallax q{font-family:var(--display);font-size:clamp(28px,4.2vw,48px);font-weight:600;line-height:1.25;quotes:'«' '»'}
+.parallax q em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.parallax cite{display:block;margin-top:22px;color:var(--muted);font-style:normal;font-size:13px;letter-spacing:.28em;text-transform:uppercase}
+@media (hover:hover) and (pointer:fine){ .parallax{background-attachment:fixed} }
+
+.office-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.office-copy h2{font-size:clamp(34px,4.6vw,50px);margin-bottom:20px}
+.office-copy h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.office-copy>p{color:var(--muted);margin-bottom:30px;max-width:480px}
+.check-list{list-style:none;display:grid;gap:16px;margin-bottom:36px}
+.check-list li{display:flex;gap:14px;align-items:flex-start;font-weight:600;font-size:15px}
+.check-list li svg{flex:none;width:26px;height:26px;padding:5px;color:var(--amber);border:1px solid rgba(242,163,60,.4);border-radius:9px;background:rgba(242,163,60,.08)}
+.lunch-stack{position:relative;display:grid;place-items:center;min-height:520px}
+.lunch-glow{position:absolute;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(226,98,43,.3),transparent 65%);filter:blur(50px)}
+.lunch-photo{position:relative;width:min(400px,88%);border-radius:28px;overflow:hidden;border:1px solid rgba(242,163,60,.4);box-shadow:0 40px 90px -30px rgba(0,0,0,.85),0 0 70px -26px rgba(242,163,60,.5);animation:plateFloat 7s ease-in-out infinite}
+@keyframes plateFloat{50%{transform:translateY(-14px)}}
+.lunch-photo img{width:100%;height:100%;aspect-ratio:4/5;object-fit:cover}
+.lunch-price-tag{position:absolute;left:18px;bottom:18px;padding:14px 22px;border-radius:18px;background:rgba(11,9,8,.8);backdrop-filter:blur(10px);border:1px solid rgba(242,163,60,.5)}
+.lunch-price-tag b{font-family:var(--display);font-size:30px;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lunch-price-tag span{display:block;font-size:11.5px;color:var(--muted);font-weight:700;letter-spacing:.08em}
+.chip-float{position:absolute;display:flex;align-items:center;gap:9px;padding:13px 19px;border-radius:18px;background:rgba(26,21,18,.9);border:1px solid var(--line);backdrop-filter:blur(10px);font-size:13px;font-weight:700;box-shadow:0 20px 50px -18px rgba(0,0,0,.8);animation:chipFloat 5.5s ease-in-out infinite;z-index:3}
+.chip-float svg{width:18px;height:18px;color:var(--amber)}
+.chip-float.c1{top:4%;right:0;animation-delay:.6s}
+.chip-float.c2{bottom:8%;left:0;animation-delay:1.8s}
+.chip-float.c3{top:40%;right:-3%;animation-delay:3s}
+
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.review-card{padding:32px 30px;border-radius:24px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));transition:.35s;display:flex;flex-direction:column;gap:16px}
+.review-card:hover{transform:translateY(-6px);border-color:rgba(242,163,60,.4)}
+.stars{display:flex;gap:4px;color:var(--amber)}
+.stars svg{width:16px;height:16px;fill:currentColor}
+.review-card p{font-size:14.5px;color:rgba(246,239,227,.9);flex:1}
+.review-author{display:flex;align-items:center;gap:12px}
+.review-ava{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--grad);color:#241203;font-family:'Unbounded';font-weight:700;font-size:15px}
+.review-author b{display:block;font-size:14.5px}
+.review-author span{font-size:12.5px;color:var(--muted)}
+
+.contacts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:40px}
+.contact-card{padding:34px 30px;border-radius:24px;border:1px solid var(--line);text-align:center;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));transition:.35s}
+.contact-card:hover{transform:translateY(-6px);border-color:rgba(242,163,60,.4)}
+.contact-card .f-icon{margin:0 auto 20px}
+.contact-card h3{font-size:22px;font-weight:600;margin-bottom:10px}
+.contact-card p{color:var(--muted);font-size:14.5px}
+.contact-card a{color:var(--amber-2);text-decoration:none;font-weight:700}
+.contact-card a:hover{text-decoration:underline}
+.cta-banner{position:relative;border-radius:32px;padding:clamp(48px,7vw,88px);text-align:center;overflow:hidden;border:1px solid rgba(242,163,60,.3)}
+.cta-banner .cta-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 50%;filter:saturate(.95)}
+.cta-banner::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,9,8,.78),rgba(11,9,8,.88));z-index:1}
+.cta-banner>*{position:relative;z-index:2}
+.cta-banner h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:14px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 3px 12px rgba(0,0,0,.85))}
+.cta-banner p{color:var(--amber-2);margin-bottom:32px;text-shadow:0 2px 10px rgba(0,0,0,.8)}
+
+footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:34px clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;color:var(--muted);font-size:13.5px}
+footer .logo{font-size:14px}
+footer a{color:var(--amber-2);text-decoration:none;font-weight:700}
+
+@media(max-width:1024px){
+  .menu-panel{grid-template-columns:1fr 1fr}
+  .about-grid,.office-grid{grid-template-columns:1fr;gap:60px}
+  .about-photo{max-width:520px;margin:0 auto}
+  .office-copy{text-align:center}.office-copy>p{margin-inline:auto}
+  .check-list{max-width:440px;margin-inline:auto;text-align:left}
+  .dish-card.wide{grid-template-columns:1fr}
+  .dish-card.wide .dish-img{min-height:220px;order:-1}
+}
+@media(max-width:900px){
+  .burger{display:flex}
+  header nav{position:fixed;top:74px;left:16px;right:16px;z-index:999;flex-direction:column;gap:4px;padding:18px;border-radius:22px;background:rgba(23,19,16,.96);border:1px solid var(--line);backdrop-filter:blur(20px);opacity:0;visibility:hidden;transform:translateY(-14px);transition:.35s}
+  header nav.open{opacity:1;visibility:visible;transform:translateY(0)}
+  header nav a{padding:12px 14px;border-radius:12px}
+  header nav a:hover{background:rgba(255,255,255,.05)}
+  header nav a::after{display:none}
+  .header-cta{display:none}
+}
+@media(max-width:768px){
+  .hero-bg{animation:none;transform:scale(1.02)}
+  .grain{animation:none}
+  .lunch-photo{animation:none}
+  .about-badge,.chip-float{animation:none}
+}
+@media(max-width:640px){
+  .menu-panel,.reviews-grid,.contacts-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr 1fr;gap:38px 20px}
+  .chip-float.c3{display:none}
+  .gal-track figure{width:240px;height:160px}
+  .section{padding:80px 20px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<div class="bg-glow"></div>
+<div class="grain"></div>
+<div class="progress-bar" id="progressBar"></div>
+
+<div id="preloader">
+  <div class="pre-logo">КАРАВАН</div>
+  <div class="pre-line"><span></span></div>
+</div>
+
+<header id="header">
+  <a href="#top" class="logo"><span class="logo-mark">◆</span>КАРАВАН</a>
+  <nav id="nav">
+    <a href="#about">О нас</a>
+    <a href="#menu">Меню</a>
+    <a href="#office">Обеды в офис</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+  <a href="tel:+79110886404" class="btn btn-primary btn-small header-cta magnetic">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c1 .3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg>
+    +7 (911) 088-64-04
+  </a>
+  <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <img class="hero-bg" src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/19203cf69-6df5-4304-9e8a-9016f1d9f5e03617.png" fetchpriority="high" alt="Шашлык на мангале с дымком">
+    <div class="hero-overlay"></div>
+    <div class="embers" id="embers"></div>
+    <div class="hero-inner">
+      <div class="hero-label reveal">Кафе-столовая в Новоселье</div>
+      <h1 class="hero-title" id="splitTitle">КАРАВАН</h1>
+      <p class="hero-sub reveal" style="transition-delay:.15s">Домашняя кухня, ароматный мангал и сытные обеды в офис — готовим как для себя, кормим как родных.</p>
+      <div class="hero-chips reveal" style="transition-delay:.25s">
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18c0 4.5-3.6 8.5-9 8.5S3 15.5 3 11Z"/><path d="M8 7c0-1.5 1-1.7 1-3.2M12.5 7c0-1.5 1-1.7 1-3.2"/></svg>Домашняя кухня</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.4 0 7-2.9 7-6.5 0-3.2-2.2-5.2-3.8-7C13.8 6.9 13 5.4 13 3c-3.2 2.1-4.4 4.7-4.4 6.6 0 .9.2 1.5.2 1.5S7 10 6.2 8.2C5.1 9.6 5 11.5 5 12.5 5 17.1 7.6 22 12 22Z"/></svg>Мангал</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 7h13v9H1z"/><path d="M14 10h4l3.5 3.2V16H14z"/><circle cx="6" cy="18.5" r="2"/><circle cx="17.5" cy="18.5" r="2"/></svg>Обеды в офис</span>
+      </div>
+      <div class="hero-cta reveal" style="transition-delay:.35s">
+        <a href="#menu" class="btn btn-primary magnetic">Смотреть меню
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#office" class="btn btn-ghost magnetic">Обеды в офис</a>
+      </div>
+    </div>
+    <a href="#about" class="scroll-hint">листай вниз<i></i></a>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marqueeTrack">
+      <span>Домашняя кухня <b>✦</b></span><span>Мангал <b>✦</b></span>
+      <span>Обеды в офис <b>✦</b></span><span>Новоселье <b>✦</b></span>
+      <span>Сытно и вкусно <b>✦</b></span><span>Как дома <b>✦</b></span>
+    </div>
+  </div>
+
+  <section id="about" class="section">
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <div class="about-frame tilt">
+          <!-- ТВОЁ ФОТО: положи файл foto-zal.jpg рядом с index.html -->
+          <img src="foto-zal.jpg" onerror="this.onerror=null;this.src='https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/59203cf69-6df5-4304-9e8a-9016f1d9f5e01648.png';" loading="lazy" decoding="async" alt="Наш зал">
+        </div>
+        <div class="about-badge b1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.4 0 7-2.9 7-6.5 0-3.2-2.2-5.2-3.8-7C13.8 6.9 13 5.4 13 3c-3.2 2.1-4.4 4.7-4.4 6.6 0 .9.2 1.5.2 1.5S7 10 6.2 8.2C5.1 9.6 5 11.5 5 12.5 5 17.1 7.6 22 12 22Z"/></svg>Живой огонь</div>
+        <div class="about-badge b2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18c0 4.5-3.6 8.5-9 8.5S3 15.5 3 11Z"/><path d="M8 7c0-1.5 1-1.7 1-3.2M12.5 7c0-1.5 1-1.7 1-3.2"/></svg>Как дома</div>
+      </div>
+      <div class="about-copy">
+        <span class="s-label reveal">Почему мы</span>
+        <h2 class="reveal" style="transition-delay:.1s">Три причины зайти <em>на огонёк</em></h2>
+        <p class="reveal" style="transition-delay:.2s">«Караван» — место, где вкусно пахнет дымом, суп всегда горячий, а гостей встречают как своих.</p>
+        <ul class="mini-feats">
+          <li class="reveal" style="transition-delay:.25s">
+            <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18c0 4.5-3.6 8.5-9 8.5S3 15.5 3 11Z"/><path d="M8 7c0-1.5 1-1.7 1-3.2M12.5 7c0-1.5 1-1.7 1-3.2"/></svg></div>
+            <div><b>Домашняя кухня</b><p>Каждый день готовим из свежих продуктов: наваристые супы, сытное второе, салаты и выпечка — как дома, только мыть посуду не надо.</p></div>
+          </li>
+          <li class="reveal" style="transition-delay:.35s">
+            <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.4 0 7-2.9 7-6.5 0-3.2-2.2-5.2-3.8-7C13.8 6.9 13 5.4 13 3c-3.2 2.1-4.4 4.7-4.4 6.6 0 .9.2 1.5.2 1.5S7 10 6.2 8.2C5.1 9.6 5 11.5 5 12.5 5 17.1 7.6 22 12 22Z"/></svg></div>
+            <div><b>Мангал</b><p>Настоящий живой огонь: сочный шашлык, люля-кебаб и овощи с дымком. То самое, ради чего к нам возвращаются снова и снова.</p></div>
+          </li>
+          <li class="reveal" style="transition-delay:.45s">
+            <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 7h13v9H1z"/><path d="M14 10h4l3.5 3.2V16H14z"/><circle cx="6" cy="18.5" r="2"/><circle cx="17.5" cy="18.5" r="2"/></svg></div>
+            <div><b>Обеды в офис</b><p>Привезём горячие обеды для вашей команды по Новоселью и окрестностям — вовремя, тепло и по-домашнему щедро.</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stats-grid">
+      <div class="reveal"><div class="stat-num"><span data-count="40">0</span>+</div><div class="stat-label">блюд в меню</div></div>
+      <div class="reveal" style="transition-delay:.1s"><div class="stat-num"><span data-count="7">0</span></div><div class="stat-label">дней в неделю работаем</div></div>
+      <div class="reveal" style="transition-delay:.2s"><div class="stat-num"><span data-count="60">0</span></div><div class="stat-label">минут — доставка обедов</div></div>
+      <div class="reveal" style="transition-delay:.3s"><div class="stat-num"><span data-count="1200">0</span>+</div><div class="stat-label">довольных гостей в месяц</div></div>
+    </div>
+  </section>
+
+  <section id="menu" class="section">
+    <div class="section-head">
+      <span class="s-label reveal">Меню</span>
+      <h2 class="s-title reveal" style="transition-delay:.1s">Выбирайте, <em>что по душе</em></h2>
+      <p class="s-sub reveal" style="transition-delay:.2s">Щедрые порции, честные цены и вкус, который помнится.</p>
+    </div>
+
+    <div class="tabs reveal">
+      <button class="tab-btn active" data-tab="tab-mangal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.4 0 7-2.9 7-6.5 0-3.2-2.2-5.2-3.8-7C13.8 6.9 13 5.4 13 3c-3.2 2.1-4.4 4.7-4.4 6.6 0 .9.2 1.5.2 1.5S7 10 6.2 8.2C5.1 9.6 5 11.5 5 12.5 5 17.1 7.6 22 12 22Z"/></svg>Мангал</button>
+      <button class="tab-btn" data-tab="tab-home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18c0 4.5-3.6 8.5-9 8.5S3 15.5 3 11Z"/><path d="M8 7c0-1.5 1-1.7 1-3.2M12.5 7c0-1.5 1-1.7 1-3.2"/></svg>Домашняя кухня</button>
+      <button class="tab-btn" data-tab="tab-lunch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 7h13v9H1z"/><path d="M14 10h4l3.5 3.2V16H14z"/><circle cx="6" cy="18.5" r="2"/><circle cx="17.5" cy="18.5" r="2"/></svg>Обеды</button>
+    </div>
+
+    <div class="menu-panel active" id="tab-mangal">
+      <div class="dish-card tilt"><div class="dish-img"><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/69203cf69-6df5-4304-9e8a-9016f1d9f5e02645.png" alt="Шашлык свиная шея" loading="lazy" decoding="async"><span class="dish-price">390 ₽</span></div><div class="dish-body"><div class="dish-name">Шашлык свиная шея</div><p class="dish-desc">Маринад на луке и специях, обжарка на углях <span class="dish-weight">· 200 г</span></p></div></div>
+      <div class="dish-card tilt"><div class="dish-img"><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/29203cf69-6df5-4304-9e8a-9016f1d9f5e04679.png" alt="Шашлык куриный" loading="lazy" decoding="async"><span class="dish-price">330 ₽</span></div><div class="dish-body"><div class="dish-name">Шашлык куриный</div><p class="dish-desc">Сочное филе бедра с ароматом дымка <span class="dish-weight">· 200 г</span></p></div></div>
+      <div class="dish-card tilt"><div class="dish-img"><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/49203cf69-6df5-4304-9e8a-9016f1d9f5e09141.png" alt="Люля-кебаб" loading="lazy" decoding="async"><span class="dish-price">350 ₽</span></div><div class="dish-body"><div class="dish-name">Люля-кебаб</div><p class="dish-desc">Рубленое мясо, зелень, пикантные нотки <span class="dish-weight">· 180 г</span></p></div></div>
+      <div class="dish-card tilt"><div class="dish-img"><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/19203cf69-6df5-4304-9e8a-9016f1d9f5e08653.png" alt="Овощи на гриле" loading="lazy" decoding="async"><span class="dish-price">250 ₽</span></div><div class="dish-body"><div class="dish-name">Овощи на гриле</div><p class="dish-desc">Цукини, болгарский перец, томаты <span class="dish-weight">· 200 г</span></p></div></div>
+      <div class="dish-card tilt"><div class="dish-img"><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/19203cf69-6df5-4304-9e8a-9016f1d9f5e05912.png" alt="Картофель с мангала" loading="lazy" decoding="async"><span class="dish-price">180 ₽</span></div><div class="dish-body"><div class="dish-name">Картофель с мангала</div><p class="dish-desc">Румяная корочка и аромат огня <span class="dish-weight">· 250 г</span></p></div></div>
+      <div class="dish-card tilt"><div class="dish-img"><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/19203cf69-6df5-4304-9e8a-9016f1d9f5e06636.png" alt="Соус фирменный" loading="lazy" decoding="async"><span class="dish-price">50 ₽</span></div><div class="dish-body"><div class="dish-name">Соус фирменный</div><p class="dish-desc">Томатный или чесночный — на выбор <span class="dish-weight">· 50 г</span></p></div></div>
+    </div>
+
+    <div class="menu-panel" id="tab-home">
+      <div class="dish-card tilt"><div class="dish-img"><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/09203cf69-6df5-4304-9e8a-9016f1d9f5e01135.png" alt="Долма" loading="lazy" decoding="async"><span class="dish-price">240 ₽</span></div><div class="dish-body"><div class="dish-name">Долма</div><p class="dish-desc">Виноградные листья, сочная начинка, как на юге <span class="dish-weight">· порция</span></p></div></div>
+      <div class="dish-card tilt"><div class="dish-img"><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/29203cf69-6df5-4304-9e8a-9016f1d9f5e08384.png" alt="Рыба в томатном соусе" loading="lazy" decoding="async"><span class="dish-price">у прилавка</span></div><div class="dish-body"><div class="dish-name">Рыба в томатном соусе</div><p class="dish-desc">Тушёная, с зеленью — хит нашей раздачи</p></div></div>
+      <div class="dish-card tilt"><div class="dish-img"><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/29203cf69-6df5-4304-9e8a-9016f1d9f5e02002.png" alt="Булочка с сосиской" loading="lazy" decoding="async"><span class="dish-price">у прилавка</span></div><div class="dish-body"><div class="dish-name">Булочка с сосиской</div><p class="dish-desc">Румяная, с кунжутом — свежая выпечка каждый день</p></div></div>
+      <div class="dish-card tilt"><div class="dish-img"><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/49203cf69-6df5-4304-9e8a-9016f1d9f5e08926.png" alt="Борщ" loading="lazy" decoding="async"><span class="dish-price">220 ₽</span></div><div class="dish-body"><div class="dish-name">Борщ</div><p class="dish-desc">Наваристый, с говядиной, сметаной и зеленью <span class="dish-weight">· 300 мл</span></p></div></div>
+      <div class="dish-card tilt"><div class="dish-img"><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/29203cf69-6df5-4304-9e8a-9016f1d9f5e08099.png" alt="Плов" loading="lazy" decoding="async"><span class="dish-price">290 ₽</span></div><div class="dish-body"><div class="dish-name">Плов</div><p class="dish-desc">Рассыпчатый, с говядиной и морковью <span class="dish-weight">· 300 г</span></p></div></div>
+      <div class="dish-card tilt"><div class="dish-img"><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/39203cf69-6df5-4304-9e8a-9016f1d9f5e07136.png" alt="Котлета с пюре" loading="lazy" decoding="async"><span class="dish-price">260 ₽</span></div><div class="dish-body"><div class="dish-name">Котлета с пюре</div><p class="dish-desc">Та самая, как в детстве <span class="dish-weight">· 250 г</span></p></div></div>
+      <div class="dish-card tilt"><div class="dish-img"><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/19203cf69-6df5-4304-9e8a-9016f1d9f5e07976.png" alt="Салат Оливье" loading="lazy" decoding="async"><span class="dish-price">150 ₽</span></div><div class="dish-body"><div class="dish-name">Салат Оливье</div><p class="dish-desc">Классика с курицей или колбасой <span class="dish-weight">· 150 г</span></p></div></div>
+      <div class="dish-card tilt"><div class="dish-img"><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/29203cf69-6df5-4304-9e8a-9016f1d9f5e03021.png" alt="Блинчики с мясом" loading="lazy" decoding="async"><span class="dish-price">180 ₽</span></div><div class="dish-body"><div class="dish-name">Блинчики с мясом</div><p class="dish-desc">Тонкие блины с сытной начинкой <span class="dish-weight">· 2 шт</span></p></div></div>
+      <div class="dish-card tilt"><div class="dish-img"><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/09203cf69-6df5-4304-9e8a-9016f1d9f5e02708.png" alt="Компот и морс" loading="lazy" decoding="async"><span class="dish-price">80 ₽</span></div><div class="dish-body"><div class="dish-name">Компот / морс</div><p class="dish-desc">Из сухофруктов или ягод <span class="dish-weight">· 300 мл</span></p></div></div>
+    </div>
+
+    <div class="menu-panel" id="tab-lunch">
+      <div class="dish-card tilt"><div class="dish-img"><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/19203cf69-6df5-4304-9e8a-9016f1d9f5e08098.png" alt="Обед дня" loading="lazy" decoding="async"><span class="dish-price">299 ₽</span></div><div class="dish-body"><div class="dish-name">Обед дня</div><p class="dish-desc">Суп + горячее + салат + напиток. Полный и сытный комплект</p></div></div>
+      <div class="dish-card tilt"><div class="dish-img"><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/69203cf69-6df5-4304-9e8a-9016f1d9f5e01290.png" alt="Обед эконом" loading="lazy" decoding="async"><span class="dish-price">249 ₽</span></div><div class="dish-body"><div class="dish-name">Обед эконом</div><p class="dish-desc">Суп дня + горячее с гарниром</p></div></div>
+      <div class="dish-card tilt"><div class="dish-img"><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/59203cf69-6df5-4304-9e8a-9016f1d9f5e04339.png" alt="Лёгкий сет" loading="lazy" decoding="async"><span class="dish-price">170 ₽</span></div><div class="dish-body"><div class="dish-name">Лёгкий сет</div><p class="dish-desc">Салат + напиток — для короткого перерыва</p></div></div>
+      <div class="dish-card wide reveal">
+        <div class="dish-body">
+          <h3>Офисный сет «Караван» — от 320 ₽</h3>
+          <p>Полноценный обед на команду — от 5 порций, привезём горячим. Доставка обедов по Новоселью при заказе от 1 500 ₽ — бесплатно.</p>
+          <a href="tel:+79110886404" class="btn btn-primary magnetic">Заказать обеды
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="dish-img"><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/99203cf69-6df5-4304-9e8a-9016f1d9f5e03524.png" alt="Офисный сет Караван" loading="lazy" decoding="async"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="parallax">
+    <blockquote class="reveal">
+      <q>Запах дымка — лучшее <em>приглашение</em> к столу</q>
+      <cite>кафе-столовая «Караван» · Новоселье</cite>
+    </blockquote>
+  </section>
+
+  <section id="office" class="section">
+    <div class="office-grid">
+      <div class="office-copy">
+        <span class="s-label reveal">Доставка</span>
+        <h2 class="reveal" style="transition-delay:.1s">Обеды в офис — <em>горячо и вовремя</em></h2>
+        <p class="reveal" style="transition-delay:.2s">Ваша команда работает — мы кормим. Собираем и привозим обеды по Новоселью и окрестностям: горячее остаётся горячим, а перерыв — перерывом.</p>
+        <ul class="check-list reveal" style="transition-delay:.3s">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Меню меняется каждый день — не надоест</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Доставка в термоупаковке — привозим горячим</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Удобная оплата: наличные, карта, безнал для юрлиц</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Бесплатная доставка по Новоселью от 1 500 ₽</li>
+        </ul>
+        <a href="tel:+79110886404" class="btn btn-primary magnetic reveal" style="transition-delay:.4s">Заказать обеды
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="lunch-stack reveal" style="transition-delay:.2s">
+        <div class="lunch-glow"></div>
+        <div class="lunch-photo tilt">
+          <img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/39203cf69-6df5-4304-9e8a-9016f1d9f5e06613.png" alt="Бизнес-ланч Караван" loading="lazy" decoding="async">
+          <div class="lunch-price-tag"><b>299 ₽</b><span>бизнес-ланч «Караван» / персона</span></div>
+        </div>
+        <div class="chip-float c1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.4 0 7-2.9 7-6.5 0-3.2-2.2-5.2-3.8-7C13.8 6.9 13 5.4 13 3c-3.2 2.1-4.4 4.7-4.4 6.6 0 .9.2 1.5.2 1.5S7 10 6.2 8.2C5.1 9.6 5 11.5 5 12.5 5 17.1 7.6 22 12 22Z"/></svg>Горячо</div>
+        <div class="chip-float c2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>От 60 минут</div>
+        <div class="chip-float c3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Вовремя</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gallery" aria-hidden="true">
+    <div class="gal-track" id="galTrack">
+      <figure><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/19203cf69-6df5-4304-9e8a-9016f1d9f5e03617.png" loading="lazy" decoding="async" alt=""><figcaption>Мангал</figcaption></figure>
+      <figure><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/29203cf69-6df5-4304-9e8a-9016f1d9f5e02002.png" loading="lazy" decoding="async" alt=""><figcaption>Выпечка</figcaption></figure>
+      <figure><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/09203cf69-6df5-4304-9e8a-9016f1d9f5e01135.png" loading="lazy" decoding="async" alt=""><figcaption>Долма</figcaption></figure>
+      <figure><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/29203cf69-6df5-4304-9e8a-9016f1d9f5e08384.png" loading="lazy" decoding="async" alt=""><figcaption>Рыба дня</figcaption></figure>
+      <figure><img src="foto-zal.jpg" onerror="this.onerror=null;this.src='https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/59203cf69-6df5-4304-9e8a-9016f1d9f5e01648.png';" loading="lazy" decoding="async" alt=""><figcaption>Наш зал</figcaption></figure>
+      <figure><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/29203cf69-6df5-4304-9e8a-9016f1d9f5e08099.png" loading="lazy" decoding="async" alt=""><figcaption>Плов</figcaption></figure>
+      <figure><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/29203cf69-6df5-4304-9e8a-9016f1d9f5e03021.png" loading="lazy" decoding="async" alt=""><figcaption>Блинчики</figcaption></figure>
+      <figure><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/49203cf69-6df5-4304-9e8a-9016f1d9f5e08926.png" loading="lazy" decoding="async" alt=""><figcaption>Борщ</figcaption></figure>
+      <figure><img src="https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/09203cf69-6df5-4304-9e8a-9016f1d9f5e02708.png" loading="lazy" decoding="async" alt=""><figcaption>Компот</figcaption></figure>
+    </div>
+  </div>
+
+  <section id="reviews" class="section">
+    <div class="section-head">
+      <span class="s-label reveal">Отзывы</span>
+      <h2 class="s-title reveal" style="transition-delay:.1s">Что говорят <em>гости</em></h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <p>«Лучший шашлык в округе! Мясо всегда сочное, порции большие, а соус — просто отдельная любовь».</p>
+        <div class="review-author"><div class="review-ava">Д</div><div><b>Дмитрий</b><span>постоянный гость</span></div></div>
+      </div>
+      <div class="review-card reveal" style="transition-delay:.12s">
+        <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <p>«Заказываем обеды на весь офис. Привозят вовремя, всё горячее и очень вкусное. Коллеги каждый день спрашивают: сегодня снова "Караван"?»</p>
+        <div class="review-author"><div class="review-ava">А</div><div><b>Анна</b><span>заказывает обеды в офис</span></div></div>
+      </div>
+      <div class="review-card reveal" style="transition-delay:.24s">
+        <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <p>«Еда как дома: борщ — как у мамы, котлеты — как в детстве. Теперь обедаем в «Караване» каждый день».</p>
+        <div class="review-author"><div class="review-ava">С</div><div><b>Сергей</b><span>живёт рядом</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts" class="section">
+    <div class="section-head">
+      <span class="s-label reveal">Контакты</span>
+      <h2 class="s-title reveal" style="transition-delay:.1s">Ждём вас <em>в гости</em></h2>
+    </div>
+    <div class="contacts-grid">
+      <div class="contact-card reveal">
+        <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Адрес</h3>
+        <p>Ленинградская обл., Ломоносовский р-н,<br>посёлок Новоселье</p>
+      </div>
+      <div class="contact-card reveal" style="transition-delay:.12s">
+        <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Часы работы</h3>
+        <p>Понедельник — воскресенье<br>09:00 – 21:00, без выходных</p>
+      </div>
+      <div class="contact-card reveal" style="transition-delay:.24s">
+        <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c1 .3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg></div>
+        <h3>Телефон</h3>
+        <p><a href="tel:+79110886404">+7 (911) 088-64-04</a><br>Звоните — примем заказ и подскажем</p>
+      </div>
+    </div>
+
+    <div class="cta-banner reveal">
+      <!-- ТВОЁ ФОТО: положи файл foto-ryba.jpg рядом с index.html -->
+      <img class="cta-bg" src="foto-ryba.jpg" onerror="this.onerror=null;this.src='https://image.qwenlm.ai/public_source/64b9f35c-1cf3-4250-ab32-adbb2d6c0373/29203cf69-6df5-4304-9e8a-9016f1d9f5e08384.png';" loading="lazy" decoding="async" alt="">
+      <h2>Проголодались? «Караван» уже готовит!</h2>
+      <p>Забронируйте стол, закажите обед в офис или просто заходите на аромат дымка.</p>
+      <a href="tel:+79110886404" class="btn btn-primary magnetic">Позвонить нам
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <a href="#top" class="logo"><span class="logo-mark">◆</span>КАРАВАН</a>
+  <div>© 2026 Кафе-столовая «Караван» · Новоселье · <a href="tel:+79110886404">+7 (911) 088-64-04</a></div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+  var preDone=false;
+  function hidePreloader(){ if(preDone)return; preDone=true;
+    document.getElementById('preloader').classList.add('done');
+    document.body.classList.add('loaded'); }
+  window.addEventListener('load',function(){setTimeout(hidePreloader,500);});
+  setTimeout(hidePreloader,2500);
+
+  var title=document.getElementById('splitTitle');
+  title.innerHTML=title.textContent.trim().split('').map(function(ch,i){
+    return '<span style="--i:'+i+'">'+ch+'</span>';}).join('');
+
+  var mt=document.getElementById('marqueeTrack'); mt.innerHTML+=mt.innerHTML;
+  var gt=document.getElementById('galTrack'); gt.innerHTML+=gt.innerHTML;
+
+  var embers=document.getElementById('embers');
+  var emberCount = isMobile ? 12 : 24;
+  for(var i=0;i<emberCount;i++){
+    var s=document.createElement('span');
+    var size=Math.random()*4+2;
+    s.style.left=(Math.random()*100)+'%';
+    s.style.width=size+'px'; s.style.height=size+'px';
+    s.style.animationDuration=(Math.random()*8+6)+'s';
+    s.style.animationDelay=(Math.random()*9)+'s';
+    s.style.setProperty('--drift',(Math.random()*90-45)+'px');
+    embers.appendChild(s);
+  }
+
+  var dot=document.querySelector('.cursor-dot'), ring=document.querySelector('.cursor-ring');
+  if(finePointer&&!reduced){
+    var mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
+    window.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
+    (function loop(){rx+=(mx-rx)*.16;ry+=(my-ry)*.16;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
+    document.querySelectorAll('a,button,.tilt').forEach(function(el){
+      el.addEventListener('mouseenter',function(){ring.classList.add('big');});
+      el.addEventListener('mouseleave',function(){ring.classList.remove('big');});
+    });
+  } else { dot.style.display='none'; ring.style.display='none'; }
+
+  var header=document.getElementById('header'), bar=document.getElementById('progressBar');
+  function onScroll(){
+    var y=window.scrollY;
+    header.classList.toggle('scrolled',y>40);
+    var h=document.documentElement.scrollHeight-innerHeight;
+    bar.style.transform='scaleX('+(h>0?y/h:0)+')';
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  var burger=document.getElementById('burger'), nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){nav.classList.toggle('open');});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');});});
+
+  var ro=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');ro.unobserve(en.target);}});},{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el);});
+
+  if(finePointer&&!reduced){
+    document.querySelectorAll('.tilt').forEach(function(card){
+      card.addEventListener('mousemove',function(e){
+        var r=card.getBoundingClientRect();
+        var x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+        card.style.transform='perspective(900px) rotateY('+(x*8)+'deg) rotateX('+(-y*8)+'deg) translateY(-4px)';
+      });
+      card.addEventListener('mouseleave',function(){card.style.transform='';});
+    });
+  }
+
+  if(finePointer&&!reduced){
+    document.querySelectorAll('.magnetic').forEach(function(btn){
+      btn.addEventListener('mousemove',function(e){
+        var r=btn.getBoundingClientRect();
+        var dx=(e.clientX-r.left-r.width/2)*.22, dy=(e.clientY-r.top-r.height/2)*.22;
+        btn.style.transform='translate('+dx+'px,'+dy+'px)';
+      });
+      btn.addEventListener('mouseleave',function(){btn.style.transform='';});
+    });
+  }
+
+  var tabBtns=document.querySelectorAll('.tab-btn'), panels=document.querySelectorAll('.menu-panel');
+  tabBtns.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      tabBtns.forEach(function(b){b.classList.remove('active');});
+      btn.classList.add('active');
+      panels.forEach(function(p){p.classList.remove('active');});
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  function anim(el){
+    var t=+el.dataset.count, st=performance.now(), dur=1600;
+    function tick(n){var p=Math.min((n-st)/dur,1), e=1-Math.pow(1-p,3);
+      el.textContent=Math.round(t*e); if(p<1)requestAnimationFrame(tick);}
+    requestAnimationFrame(tick);
+  }
+  var co=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){anim(en.target);co.unobserve(en.target);}});},{threshold:.6});
+  document.querySelectorAll('[data-count]').forEach(function(el){co.observe(el);});
+})();
+</script>
+
+</body>
+</html>
