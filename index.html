@@ -127,6 +127,7 @@ nav.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(20px);padding
 .btn-p:hover{transform:translateY(-3px)}
 .btn-s{background:#fff;color:var(--fg);border:2px solid var(--line);box-shadow:0 6px 20px rgba(176,64,92,.08)}
 .btn-s:hover{border-color:var(--sage);color:var(--sage)}
+/* HERO COLLAGE */
 .hero-collage{position:relative;height:620px}
 .polaroid{position:absolute;background:#fff;padding:14px 14px 44px;border-radius:6px;box-shadow:0 24px 60px rgba(176,64,92,.2);overflow:visible;will-change:transform;transition:box-shadow .4s}
 .polaroid:hover{box-shadow:0 32px 70px rgba(212,91,120,.35);z-index:20}
@@ -135,6 +136,9 @@ nav.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(20px);padding
 .polaroid.p1{width:300px;height:380px;top:0;left:10%;transform:rotate(-6deg);z-index:3}
 .polaroid.p2{width:250px;height:320px;top:30%;right:0;transform:rotate(7deg);z-index:2}
 .polaroid.p3{width:230px;height:300px;bottom:0;left:0;transform:rotate(3deg);z-index:1}
+.collage-dots{display:none;position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);gap:12px;z-index:10}
+.cdot{width:11px;height:11px;border-radius:50%;background:rgba(212,91,120,.3);transition:all .3s;cursor:pointer;padding:0}
+.cdot.on{background:var(--acc);transform:scale(1.35)}
 .scroll-ind{position:absolute;bottom:30px;left:56px;color:rgba(61,40,46,.5);font-size:9px;letter-spacing:3px;text-transform:uppercase;display:flex;align-items:center;gap:12px;z-index:5}
 .scroll-ind::after{content:'';width:40px;height:2px;background:var(--acc);animation:sLine 2.2s ease-in-out infinite;transform-origin:left}
 @keyframes sLine{0%{transform:scaleX(0)}50%{transform:scaleX(1)}100%{transform:scaleX(0);transform-origin:right}}
@@ -287,7 +291,7 @@ footer{background:var(--card);color:var(--fg);padding:80px 56px 36px;border-top:
 .f-col a:hover{color:var(--acc);transform:translateX(4px)}
 .f-bot{max-width:1400px;margin:0 auto;padding-top:32px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;font-size:12px;color:var(--mut);font-weight:500}
 .f-age{border:1px solid var(--line);border-radius:999px;padding:4px 14px}
-@media(max-width:1100px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero-collage{height:440px;max-width:520px;margin:0 auto}.about-grid{grid-template-columns:1fr;gap:50px}.bento{grid-template-columns:repeat(2,1fr)}.b-card.big{grid-column:span 2}.scroll-ind{display:none}}
+@media(max-width:1100px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero-collage{height:480px;max-width:560px;margin:0 auto}.about-grid{grid-template-columns:1fr;gap:50px}.bento{grid-template-columns:repeat(2,1fr)}.b-card.big{grid-column:span 2}.scroll-ind{display:none}}
 @media(max-width:1024px){
 .nav-links{display:none}.burger{display:flex}.cursor,.cursor-follower{display:none}body{cursor:auto}
 nav,section{padding-left:24px;padding-right:24px}
@@ -303,10 +307,16 @@ nav,section{padding-left:24px;padding-right:24px}
 .hero-left{padding-left:0;text-align:center}
 .hero-sub{margin-left:auto;margin-right:auto}
 .hero-btns{justify-content:center}
-.hero-collage{height:360px;width:100%}
-.polaroid.p1{width:190px;height:250px;left:2%}
-.polaroid.p2{width:160px;height:210px;right:0}
-.polaroid.p3{width:150px;height:200px;left:8%;bottom:-4%}
+.hero-collage{height:430px;width:100%;max-width:400px;margin:0 auto}
+.polaroid{position:absolute;left:50%;top:46%;width:280px;height:350px;margin:0;opacity:0;pointer-events:none;transition:opacity .5s var(--ease),transform .5s var(--ease);z-index:1}
+.polaroid.p1{transform:translate(-50%,-50%) rotate(-5deg) scale(.92)}
+.polaroid.p2{transform:translate(-50%,-50%) rotate(4deg) scale(.92)}
+.polaroid.p3{transform:translate(-50%,-50%) rotate(-2deg) scale(.92)}
+.polaroid.active{opacity:1;pointer-events:auto;z-index:5}
+.polaroid.active.p1{transform:translate(-50%,-50%) rotate(-5deg) scale(1)}
+.polaroid.active.p2{transform:translate(-50%,-50%) rotate(4deg) scale(1)}
+.polaroid.active.p3{transform:translate(-50%,-50%) rotate(-2deg) scale(1)}
+.collage-dots{display:flex}
 .bento{grid-template-columns:1fr;grid-auto-rows:auto}
 .b-card.big,.b-card.wide{grid-column:span 1;grid-row:span 1}
 .b-card{min-height:320px}
@@ -436,10 +446,15 @@ nav{padding:14px 20px}nav.scrolled{padding:12px 20px}
 <a href="#bouquets" class="btn btn-s magnetic">Наши букеты</a>
 </div>
 </div>
-<div class="hero-collage">
-<div class="polaroid p1"><div class="ph"><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600&q=65&fit=crop" alt="Розы" loading="eager" onerror="this.style.display='none';this.parentNode.classList.add('nofoto')"><span class="fbill"><svg class="ill"><use href="#fl-rose"/></svg></span></div><div class="plabel">розы</div></div>
+<div class="hero-collage" id="heroCollage">
+<div class="polaroid p1 active"><div class="ph"><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600&q=65&fit=crop" alt="Розы" loading="eager" onerror="this.style.display='none';this.parentNode.classList.add('nofoto')"><span class="fbill"><svg class="ill"><use href="#fl-rose"/></svg></span></div><div class="plabel">розы</div></div>
 <div class="polaroid p2"><div class="ph"><img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=500&q=65&fit=crop" alt="Нежные цветы" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('nofoto')"><span class="fbill"><svg class="ill"><use href="#fl-bouq"/></svg></span></div><div class="plabel">нежность</div></div>
 <div class="polaroid p3"><div class="ph"><img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=500&q=65&fit=crop" alt="Букет" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('nofoto')"><span class="fbill"><svg class="ill"><use href="#fl-tulip"/></svg></span></div><div class="plabel">букеты</div></div>
+<div class="collage-dots" id="collageDots">
+<button class="cdot on" data-i="0" aria-label="Фото 1"></button>
+<button class="cdot" data-i="1" aria-label="Фото 2"></button>
+<button class="cdot" data-i="2" aria-label="Фото 3"></button>
+</div>
 </div>
 </div>
 <div class="scroll-ind">листайте</div>
@@ -641,6 +656,24 @@ document.addEventListener('animationend',function(e){if(e.target.classList)e.tar
 var TAPSEL='.b-card,.g-card,.af,.c-card,.btn,.nav-cta,.b-add,.soc a,.polaroid,.rev-card,.step';
 document.addEventListener('pointerdown',function(e){var el=e.target.closest(TAPSEL);if(el){tapFx(el,e);}},{passive:true});
 document.querySelectorAll('.g-card').forEach(function(g){g.addEventListener('click',function(){g.classList.add('zoomed');setTimeout(function(){g.classList.remove('zoomed')},600);});});
+
+/* ===== КОЛЛАЖ-СЛАЙДЕР (мобила) ===== */
+var pols=[].slice.call(document.querySelectorAll('.hero-collage .polaroid'));
+var cdots=[].slice.call(document.querySelectorAll('.collage-dots .cdot'));
+var polIdx=0,polTimer=null;
+function showPol(i){
+  polIdx=((i%pols.length)+pols.length)%pols.length;
+  pols.forEach(function(p,idx){p.classList.toggle('active',idx===polIdx)});
+  cdots.forEach(function(d,idx){d.classList.toggle('on',idx===polIdx)});
+}
+function startPolTimer(){
+  clearInterval(polTimer);
+  polTimer=setInterval(function(){if(window.innerWidth<=768){showPol(polIdx+1)}},3200);
+}
+cdots.forEach(function(d,i){d.addEventListener('click',function(){showPol(i);startPolTimer();})});
+pols.forEach(function(p){p.addEventListener('click',function(){if(window.innerWidth<=768){showPol(polIdx+1);startPolTimer();}})});
+showPol(0);startPolTimer();
+
 var navbar=document.getElementById('navbar');
 var navLinks=[].slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
 var secs=navLinks.map(function(a){return document.querySelector(a.getAttribute('href'))});
@@ -674,7 +707,9 @@ gsap.to('.hero-badge',{opacity:1,duration:.7,delay:.1,ease:"back.out(1.7)"});
 gsap.to('.hero-sub',{y:0,opacity:1,duration:.9,delay:1,ease:"power3.out"});
 gsap.to('.hero-btns',{y:0,opacity:1,duration:.9,delay:1.2,ease:"power3.out"});
 gsap.from('.polaroid',{scale:.4,opacity:0,duration:1,stagger:.18,ease:"back.out(1.5)",delay:.4});
-gsap.utils.toArray('.polaroid').forEach(function(it,i){gsap.to(it,{y:-50-i*20,rotation:(i%2?10:-8),ease:"none",scrollTrigger:{trigger:'.hero',start:"top top",end:"bottom top",scrub:true}});});
+if(matchMedia('(min-width:769px)').matches){
+  gsap.utils.toArray('.polaroid').forEach(function(it,i){gsap.to(it,{y:-50-i*20,rotation:(i%2?10:-8),ease:"none",scrollTrigger:{trigger:'.hero',start:"top top",end:"bottom top",scrub:true}});});
+}
 document.querySelectorAll('.sh h2 .word span').forEach(function(el){gsap.to(el,{y:0,duration:.9,ease:"power4.out",scrollTrigger:{trigger:el,start:"top 90%"}});});
 gsap.from('.about-ill .main',{x:-120,opacity:0,duration:1.2,ease:"power3.out",scrollTrigger:{trigger:'.about',start:"top 75%"}});
 gsap.from('.about-ill .mini',{scale:.4,opacity:0,duration:.9,stagger:.2,ease:"back.out(1.6)",scrollTrigger:{trigger:'.about',start:"top 70%"}});
