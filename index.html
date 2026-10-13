@@ -127,7 +127,6 @@ nav.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(20px);padding
 .btn-p:hover{transform:translateY(-3px)}
 .btn-s{background:#fff;color:var(--fg);border:2px solid var(--line);box-shadow:0 6px 20px rgba(176,64,92,.08)}
 .btn-s:hover{border-color:var(--sage);color:var(--sage)}
-/* HERO COLLAGE — ряд полароидов без перекрытий на всех версиях */
 .hero-collage{display:flex;justify-content:center;align-items:center;gap:22px;padding:20px 10px}
 .polaroid{position:relative;width:30%;max-width:230px;aspect-ratio:3/4;background:#fff;padding:12px 12px 42px;border-radius:6px;box-shadow:0 24px 60px rgba(176,64,92,.2);overflow:visible;will-change:transform;transition:box-shadow .4s;flex-shrink:1}
 .polaroid:hover{box-shadow:0 32px 70px rgba(212,91,120,.35)}
@@ -162,18 +161,20 @@ section{padding:100px 56px;position:relative}
 .sh h2 .word{display:inline-block;overflow:hidden;padding:0 3px}
 .sh h2 .word span{display:inline-block;transform:translateY(110%);will-change:transform}
 .sh p{font-size:16px;color:var(--mut);line-height:1.7;font-weight:500}
-.about{background:var(--bg)}
-.about-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}
-.about-ill{position:relative;min-height:480px}
-.about-ill .main{width:min(100%,380px);aspect-ratio:3/4;border-radius:200px 200px 24px 24px;overflow:hidden;border:8px solid #fff;box-shadow:0 30px 70px rgba(176,64,92,.2);position:relative;z-index:2}
-.about-ill .accent{position:absolute;width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg,var(--acc2),var(--acc));opacity:.4;z-index:1;top:-20px;right:10%}
-.about-ill .mini{position:absolute;width:130px;height:130px;border-radius:50%;overflow:hidden;border:6px solid #fff;box-shadow:0 16px 40px rgba(176,64,92,.22);z-index:3}
-.about-ill .mini.a{bottom:8%;right:2%}
-.about-ill .mini.b{top:12%;left:-4%}
-.about-txt h2{font-size:clamp(34px,4.5vw,52px);color:var(--fg);margin-bottom:24px;line-height:1.1;font-weight:700}
+/* ===== О НАС (поджато, без пустоты) ===== */
+.about{background:var(--bg);padding-top:70px;padding-bottom:70px}
+.about-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.about-ill{position:relative;min-height:400px}
+.about-ill .main{width:min(100%,320px);aspect-ratio:3/4;border-radius:200px 200px 24px 24px;overflow:hidden;border:8px solid #fff;box-shadow:0 30px 70px rgba(176,64,92,.2);position:relative;z-index:2}
+.about-ill .accent{position:absolute;width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--acc2),var(--acc));opacity:.4;z-index:1;top:-14px;right:12%}
+.about-ill .mini{position:absolute;width:118px;height:118px;border-radius:50%;overflow:hidden;border:6px solid #fff;box-shadow:0 16px 40px rgba(176,64,92,.22);z-index:3}
+.about-ill .mini.a{bottom:6%;right:2%}
+.about-ill .mini.b{top:10%;left:-4%}
+.about-txt .sh{margin-bottom:26px}
+.about-txt h2{font-size:clamp(34px,4.5vw,52px);color:var(--fg);margin-bottom:22px;line-height:1.1;font-weight:700}
 .about-txt h2 em{color:var(--acc);font-style:italic}
-.about-txt p{font-size:16px;line-height:1.9;color:var(--mut);margin-bottom:18px;font-weight:500}
-.about-feats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
+.about-txt p{font-size:16px;line-height:1.85;color:var(--mut);margin-bottom:16px;font-weight:500}
+.about-feats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
 .af{display:flex;align-items:flex-start;gap:14px;padding:20px;background:var(--card);border-radius:18px;border:1px solid var(--line);transition:all .4s var(--ease);position:relative;overflow:hidden;box-shadow:0 6px 20px rgba(176,64,92,.07)}
 .af:hover{transform:translateY(-6px);border-color:rgba(212,91,120,.5);box-shadow:0 18px 44px rgba(212,91,120,.18)}
 .af .ic{color:var(--acc);transition:transform .4s var(--ease)}
@@ -312,6 +313,8 @@ nav,section{padding-left:24px;padding-right:24px}
 .f-row{grid-template-columns:1fr}
 }
 @media(max-width:768px){
+.about{padding-top:56px;padding-bottom:56px}
+.about-ill{min-height:340px}
 .hero-collage{gap:12px;padding:14px 6px}
 .polaroid{width:31%;padding:8px 8px 30px}
 .polaroid .ph{height:calc(100% - 30px)}
@@ -323,14 +326,15 @@ nav,section{padding-left:24px;padding-right:24px}
 .b-card.big,.b-card.wide{grid-column:span 1;grid-row:span 1}
 .b-card{min-height:320px}
 .b-card .bimg{height:200px}
-.about-ill{min-height:400px}
 }
 @media(max-width:600px){
 section{padding:76px 20px}
+.about{padding:50px 20px}
 nav{padding:14px 20px}nav.scrolled{padding:12px 20px}
 .about-feats,.st-grid{grid-template-columns:1fr}
 .hero-badge{font-size:9px;padding:7px 16px;letter-spacing:2px}
 .about-ill .main{width:min(100%,280px)}
+.about-ill{min-height:320px}
 .g-card{flex:0 0 78vw}
 .rev-grid{gap:16px}
 }
