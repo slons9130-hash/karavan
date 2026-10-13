@@ -161,16 +161,14 @@ section{padding:100px 56px;position:relative}
 .sh h2 .word{display:inline-block;overflow:hidden;padding:0 3px}
 .sh h2 .word span{display:inline-block;transform:translateY(110%);will-change:transform}
 .sh p{font-size:16px;color:var(--mut);line-height:1.7;font-weight:500}
-/* ===== О НАС — поджато, без пустоты ===== */
-.about{background:var(--bg);padding-top:48px;padding-bottom:48px}
-.about-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:center}
+/* ===== О НАС — чисто и ровно, без пустот ===== */
+.about{background:var(--bg);padding:60px 56px}
+.about-grid{max-width:1150px;margin:0 auto;display:grid;grid-template-columns:360px 1fr;gap:56px;align-items:stretch}
 .about-ill{position:relative}
-.about-ill .main{width:100%;aspect-ratio:3/4;border-radius:180px 180px 24px 24px;overflow:hidden;border:8px solid #fff;box-shadow:0 30px 70px rgba(176,64,92,.2);position:relative;z-index:2}
-.about-ill .accent{position:absolute;width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,var(--acc2),var(--acc));opacity:.4;z-index:1;top:-16px;right:-10px}
-.about-ill .mini{position:absolute;width:104px;height:104px;border-radius:50%;overflow:hidden;border:5px solid #fff;box-shadow:0 16px 40px rgba(176,64,92,.22);z-index:3}
-.about-ill .mini.a{bottom:-4%;right:-14px}
-.about-ill .mini.b{top:6%;left:-18px}
-.about-txt .sh{margin-bottom:18px}
+.about-ill .main{width:100%;height:100%;min-height:440px;border-radius:180px 180px 24px 24px;overflow:hidden;border:8px solid #fff;box-shadow:0 30px 70px rgba(176,64,92,.18);position:relative}
+.about-ill .main .ph{height:100%}
+.about-txt{display:flex;flex-direction:column;justify-content:center}
+.about-txt .sh{margin-bottom:20px}
 .about-txt h2{font-size:clamp(30px,4vw,46px);color:var(--fg);margin-bottom:18px;line-height:1.1;font-weight:700}
 .about-txt h2 em{color:var(--acc);font-style:italic}
 .about-txt p{font-size:15px;line-height:1.8;color:var(--mut);margin-bottom:12px;font-weight:500}
@@ -297,8 +295,10 @@ footer{background:var(--card);color:var(--fg);padding:80px 56px 36px;border-top:
 .hero-btns{justify-content:center}
 .hero-collage{gap:18px}
 .polaroid{max-width:200px}
-.about-grid{grid-template-columns:1fr;gap:40px;max-width:760px}
-.about-ill{max-width:320px;margin:0 auto}
+.about{padding:50px 24px}
+.about-grid{grid-template-columns:1fr;gap:34px;max-width:640px}
+.about-ill{max-width:300px;width:100%;margin:0 auto}
+.about-ill .main{min-height:0;aspect-ratio:3/4;height:auto}
 .about-txt{text-align:center}
 .about-txt .sh{margin-left:auto;margin-right:auto}
 .about-feats{text-align:left}
@@ -317,9 +317,6 @@ nav,section{padding-left:24px;padding-right:24px}
 .f-row{grid-template-columns:1fr}
 }
 @media(max-width:768px){
-.about{padding-top:40px;padding-bottom:40px}
-.about-ill{max-width:280px}
-.about-ill .mini{width:88px;height:88px}
 .hero-collage{gap:12px;padding:14px 6px}
 .polaroid{width:31%;padding:8px 8px 30px}
 .polaroid .ph{height:calc(100% - 30px)}
@@ -334,8 +331,8 @@ nav,section{padding-left:24px;padding-right:24px}
 }
 @media(max-width:600px){
 section{padding:76px 20px}
-.about{padding:36px 20px}
 nav{padding:14px 20px}nav.scrolled{padding:12px 20px}
+.about{padding:42px 20px}
 .about-feats,.st-grid{grid-template-columns:1fr}
 .hero-badge{font-size:9px;padding:7px 16px;letter-spacing:2px}
 .g-card{flex:0 0 78vw}
@@ -475,10 +472,7 @@ nav{padding:14px 20px}nav.scrolled{padding:12px 20px}
 <div class="sec-num">01</div>
 <div class="about-grid">
 <div class="about-ill">
-<div class="accent"></div>
 <div class="main"><div class="ph"><img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=600&q=65&fit=crop" alt="Букет" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('nofoto')"><span class="fbill"><svg class="ill"><use href="#fl-bouq"/></svg></span></div></div>
-<div class="mini a"><div class="ph"><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=300&q=65&fit=crop" alt="Розы" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('nofoto')"><span class="fbill"><svg class="ill"><use href="#fl-rose"/></svg></span></div></div>
-<div class="mini b"><div class="ph"><img src="https://images.unsplash.com/photo-1563241527-82809a4f6b35?w=300&q=65&fit=crop" alt="Тюльпаны" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('nofoto')"><span class="fbill"><svg class="ill"><use href="#fl-tulip"/></svg></span></div></div>
 </div>
 <div class="about-txt">
 <div class="sh"><div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3c-4 0-7 3-7 7 0 4 3 7 7 7s7-3 7-7c0-4-3-7-7-7z"/></svg>О магазине цветов</div>
@@ -694,9 +688,9 @@ gsap.to('.hero-sub',{y:0,opacity:1,duration:.9,delay:1,ease:"power3.out"});
 gsap.to('.hero-btns',{y:0,opacity:1,duration:.9,delay:1.2,ease:"power3.out"});
 gsap.from('.polaroid',{y:40,opacity:0,duration:1,stagger:.18,ease:"back.out(1.5)",delay:.4});
 document.querySelectorAll('.sh h2 .word span').forEach(function(el){gsap.to(el,{y:0,duration:.9,ease:"power4.out",scrollTrigger:{trigger:el,start:"top 90%"}});});
-gsap.from('.about-ill .main',{x:-120,opacity:0,duration:1.2,ease:"power3.out",scrollTrigger:{trigger:'.about',start:"top 80%"}});
-gsap.from('.about-ill .mini',{scale:.4,opacity:0,duration:.9,stagger:.2,ease:"back.out(1.6)",scrollTrigger:{trigger:'.about',start:"top 75%"}});
-gsap.from('.af',{y:36,opacity:0,duration:.7,stagger:.1,ease:"power3.out",scrollTrigger:{trigger:'.about-feats',start:"top 92%"}});
+gsap.from('.about-ill',{x:-80,opacity:0,duration:1.1,ease:"power3.out",scrollTrigger:{trigger:'.about',start:"top 78%"}});
+gsap.from('.about-txt',{x:60,opacity:0,duration:1.1,ease:"power3.out",scrollTrigger:{trigger:'.about',start:"top 78%"}});
+gsap.from('.af',{y:30,opacity:0,duration:.7,stagger:.1,ease:"power3.out",scrollTrigger:{trigger:'.about-feats',start:"top 92%"}});
 gsap.from('.b-card',{y:60,opacity:0,duration:.9,stagger:.08,ease:"power3.out",scrollTrigger:{trigger:'.bento',start:"top 85%"}});
 ScrollTrigger.create({trigger:'.bento',start:"top 85%",once:true,onEnter:function(){document.getElementById('bento').classList.add('in')}});
 document.querySelectorAll('.b-card').forEach(function(card){var tick=false;card.addEventListener('mousemove',function(e){if(tick)return;tick=true;requestAnimationFrame(function(){var r=card.getBoundingClientRect();gsap.to(card,{rotateY:((e.clientX-r.left)/r.width-.5)*6,rotateX:-((e.clientY-r.top)/r.height-.5)*6,transformPerspective:1000,duration:.3});tick=false;});});card.addEventListener('mouseleave',function(){gsap.to(card,{rotateY:0,rotateX:0,duration:.5})});});
