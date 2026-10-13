@@ -8,10 +8,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- ВАЖНО: без defer, чтобы gsap был готов до inline-скрипта -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+<!-- НОВЫЕ CDN: jsdelivr + автоматический запасной на unpkg если не загрузится -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js" onerror="this.onerror=null;this.src='https://unpkg.com/gsap@3.12.2/dist/gsap.min.js'"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js" onerror="this.onerror=null;this.src='https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js'"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollToPlugin.min.js" onerror="this.onerror=null;this.src='https://unpkg.com/gsap@3.12.2/dist/ScrollToPlugin.min.js'"></script>
 <style>
 :root{
   --bg:#faeef0;--bg2:#f5e3e8;--card:#ffffff;--card2:#fff7f8;
@@ -25,7 +25,6 @@
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:auto;overflow-x:hidden;background:var(--bg)}
-/* ИСПРАВЛЕНО: убран cursor:none с body — ставится через JS после загрузки */
 body{font-family:var(--fb);background:var(--bg);color:var(--fg);overflow-x:hidden;font-size:16px;line-height:1.6}
 body.js-ready{cursor:none}
 h1,h2,h3,h4{font-family:var(--fd)}
@@ -290,6 +289,9 @@ footer{background:var(--card);color:var(--fg);padding:80px 56px 36px;border-top:
 .f-col a:hover{color:var(--acc);transform:translateX(4px)}
 .f-bot{max-width:1400px;margin:0 auto;padding-top:32px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;font-size:12px;color:var(--mut);font-weight:500}
 .f-age{border:1px solid var(--line);border-radius:999px;padding:4px 14px}
+.toast{position:fixed;top:90px;left:50%;transform:translateX(-50%);background:#fff;color:#3d282e;padding:14px 26px;border-radius:14px;z-index:99999;font-weight:700;font-size:14px;box-shadow:0 12px 30px rgba(176,64,92,.2);border:2px solid rgba(212,91,120,.3);animation:toastIn .4s var(--ease),toastOut .3s ease 1.8s forwards}
+@keyframes toastIn{from{opacity:0;transform:translate(-50%,-20px)}to{opacity:1;transform:translate(-50%,0)}}
+@keyframes toastOut{to{opacity:0;transform:translate(-50%,-10px)}}
 @media(max-width:1100px){
 .hero{padding-top:96px}
 .hero-grid{grid-template-columns:1fr;gap:36px}
@@ -346,7 +348,7 @@ nav{padding:14px 20px}nav.scrolled{padding:12px 20px}
 .cursor,.cursor-follower{display:none}body,body.js-ready{cursor:auto}
 .hero h1 .char{transform:none;opacity:1}
 .sh h2 .word span{transform:none}
-.hero-sub,.hero-btns{opacity:1;transform:none}
+.hero-sub,.hero-btns,.hero-badge{opacity:1;transform:none}
 .mq-track{animation:none}
 .preloader{display:none}#petals{display:none}
 .logo3d{animation:none}.logo3d .pl{opacity:1}
@@ -595,21 +597,15 @@ nav{padding:14px 20px}nav.scrolled{padding:12px 20px}
 <div class="f-bot"><span>© <span id="yr"></span> Цветы · Магазин цветов</span><span class="f-age">4,5 ★</span></div>
 </footer>
 <script>
-// =====================================================================
-// ИСПРАВЛЕНО: Базовый рендер ДОЛЖЕН происходить СРАЗУ, не завися от GSAP
-// =====================================================================
-
-// 1. Год в футере
+// ============ БАЗОВЫЙ РЕНДЕР (работает всегда, даже без интернета) ============
 document.getElementById('yr').textContent = new Date().getFullYear();
 
-// 2. SVG-логотипы
 var LOGO_SVG = '<svg class="logo3d" viewBox="0 0 96 96"><use href="#lg-bloom"/></svg>';
 (function(){
   var w = document.querySelectorAll('[data-logo]');
   for(var i=0;i<w.length;i++){ w[i].innerHTML = LOGO_SVG; }
 })();
 
-// 3. Ротация слова "роз/пионов/..."
 (function(){
   var el = document.getElementById('rotWord');
   if(!el) return;
@@ -624,8 +620,7 @@ var LOGO_SVG = '<svg class="logo3d" viewBox="0 0 96 96"><use href="#lg-bloom"/><
   }, 2200);
 })();
 
-// 4. ВАЖНО: Генерация заголовка hero — СРАЗУ, не внутри whenGsap
-// (было внутри whenGsap — из-за этого сайт был пустым если GSAP не загрузился)
+// Заголовок — рисуем СРАЗУ
 (function(){
   var heroH1 = document.getElementById('heroTitle');
   if(!heroH1) return;
@@ -653,7 +648,7 @@ var LOGO_SVG = '<svg class="logo3d" viewBox="0 0 96 96"><use href="#lg-bloom"/><
   });
 })();
 
-// 5. ВАЖНО: Генерация отзывов — СРАЗУ, не внутри whenGsap
+// Отзывы — рисуем СРАЗУ
 var REVIEWS = [
   {n:'Vikrotia Chi', l:'Знаток города 5 уровня', t:'Замечательное место! Срочно потребовался букет на неожиданный праздник. Обратились в данный магазин, зная неординарные вкусы получательницы букета…'},
   {n:'Alina Teushacova', l:'Знаток города 3 уровня', t:'Прекрасный магазинчик с прекрасными букетами. Флорист Александра быстро собрала мне красивый букет.'},
@@ -671,9 +666,7 @@ var REVIEWS = [
   }).join('');
 })();
 
-// =====================================================================
-// ИСПРАВЛЕНО: Прелоадер исчезнет ГАРАНТИРОВАННО, даже если что-то сломалось
-// =====================================================================
+// ============ ПРЕЛОАДЕР (исчезнет гарантированно) ============
 var ISMOB = window.innerWidth < 768;
 var preHidden = false, preStart = Date.now();
 function openSite(){
@@ -681,16 +674,14 @@ function openSite(){
   preHidden = true;
   var p = document.getElementById('pre');
   if(p) p.classList.add('hidden');
-  document.body.classList.add('js-ready'); // включаем кастомный курсор только после загрузки
+  document.body.classList.add('js-ready');
 }
 window.addEventListener('load', function(){
   var wait = Math.max(0, 600 - (Date.now() - preStart));
   setTimeout(openSite, wait);
 });
-// Фоллбэк: если что-то тормозит — через 3 секунды принудительно скроем
 setTimeout(openSite, 3000);
 
-// Анимация прогресса прелоадера
 var lp = {v:0};
 (function tick(){
   lp.v = Math.min(100, lp.v + Math.random()*14 + 6);
@@ -700,9 +691,7 @@ var lp = {v:0};
   if(lp.v < 100) setTimeout(tick, 60);
 })();
 
-// =====================================================================
-// Canvas с падающими лепестками (без зависимостей)
-// =====================================================================
+// ============ CANVAS ЛЕПЕСТКИ (нативный, без GSAP) ============
 (function(){
   var c = document.getElementById('petals');
   if(!c) return;
@@ -794,111 +783,34 @@ var lp = {v:0};
   })();
 })();
 
-// =====================================================================
-// ИСПРАВЛЕНО: whenGsap с защитой от падения и таймаутом
-// Если GSAP не загрузится — создадим мок-объект, чтобы остальной код не падал
-// =====================================================================
-function whenGsap(cb){
-  if(window.gsap && window.ScrollTrigger){
-    try { cb(); } catch(e){ console.warn('GSAP callback error:', e); }
-    return;
-  }
-  var tries = 0;
-  var interval = setInterval(function(){
-    tries++;
-    if(window.gsap && window.ScrollTrigger){
-      clearInterval(interval);
-      try { cb(); } catch(e){ console.warn('GSAP callback error:', e); }
-    } else if(tries > 60){ // 3 секунды ожидания
-      clearInterval(interval);
-      console.warn('GSAP не загрузился через 3 сек, создаём мок');
-      // Мок-объект чтобы остальной код не упал
-      window.gsap = window.gsap || {
-        to: function(){}, from: function(){}, registerPlugin: function(){}
-      };
-      window.ScrollTrigger = window.ScrollTrigger || { create: function(){} };
-      window.ScrollToPlugin = window.ScrollToPlugin || {};
-      try { cb(); } catch(e){ console.warn('GSAP callback error:', e); }
-    }
-  }, 50);
+// ============ НАТИВНЫЙ ИНТЕРАКТИВ (работает без GSAP) ============
+
+// Тосты — на CSS анимации
+function showToast(msg){
+  var n = document.createElement('div');
+  n.className = 'toast';
+  n.textContent = msg;
+  document.body.appendChild(n);
+  setTimeout(function(){ n.remove(); }, 2200);
 }
 
-// =====================================================================
-// ВСЁ ОСТАЛЬНОЕ (анимации, интерактив) — внутри whenGsap
-// =====================================================================
-whenGsap(function(){
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-
-var cursor = document.querySelector('.cursor');
-var follower = document.querySelector('.cursor-follower');
-var mx=-100, my=-100, fx=-100, fy=-100;
-
-document.addEventListener('mousemove', function(e){
-  mx = e.clientX; my = e.clientY;
-  cursor.style.left = mx + 'px';
-  cursor.style.top = my + 'px';
-}, {passive:true});
-
-(function ac(){
-  fx += (mx - fx) * .18;
-  fy += (my - fy) * .18;
-  follower.style.left = fx + 'px';
-  follower.style.top = fy + 'px';
-  requestAnimationFrame(ac);
-})();
-
-document.querySelectorAll('a,button,.b-card,.af,.c-card,.g-card,.rev-card,.step,.polaroid').forEach(function(el){
-  el.addEventListener('mouseenter', function(){ cursor.classList.add('hover'); });
-  el.addEventListener('mouseleave', function(){ cursor.classList.remove('hover'); });
-});
-
-if(matchMedia('(pointer:fine)').matches){
-  document.querySelectorAll('.logo3d-wrap').forEach(function(w){
-    var svg = w.querySelector('.logo3d');
-    if(!svg) return;
-    w.addEventListener('mouseenter', function(){ svg.style.animation = 'none'; });
-    w.addEventListener('mousemove', function(e){
-      var r = w.getBoundingClientRect();
-      var px = (e.clientX - r.left)/r.width - .5;
-      var py = (e.clientY - r.top)/r.height - .5;
-      gsap.to(svg, {rotateY: px*40, rotateX: -py*28, duration: .4, ease: 'power2.out', transformPerspective: 700});
-    });
-    w.addEventListener('mouseleave', function(){
-      gsap.to(svg, {
-        rotateY: 0, rotateX: 0, duration: .9,
-        ease: 'elastic.out(1,.4)', transformPerspective: 700,
-        onComplete: function(){ svg.style.animation = ''; svg.style.transform = ''; }
-      });
-    });
-  });
-  var lastSpark = 0;
-  document.addEventListener('mousemove', function(e){
-    var now = Date.now();
-    if(now - lastSpark < 40) return;
-    lastSpark = now;
+// Искры при клике
+function burst(x, y){
+  for(var i=0;i<8;i++){
     var s = document.createElement('i');
-    s.className = 'ctrail';
-    s.style.left = e.clientX + 'px';
-    s.style.top = e.clientY + 'px';
+    s.className = 'spark';
+    var a = Math.random() * Math.PI * 2;
+    var dist = 30 + Math.random()*55;
+    s.style.left = x + 'px';
+    s.style.top = y + 'px';
+    s.style.setProperty('--dx', (Math.cos(a)*dist) + 'px');
+    s.style.setProperty('--dy', (Math.sin(a)*dist) + 'px');
     document.body.appendChild(s);
-    setTimeout(function(){ s.remove(); }, 520);
-  }, {passive:true});
+    setTimeout((function(el){ return function(){ el.remove(); }; })(s), 700);
+  }
 }
 
-document.querySelectorAll('.magnetic').forEach(function(btn){
-  btn.addEventListener('mousemove', function(e){
-    var r = btn.getBoundingClientRect();
-    gsap.to(btn, {
-      x: (e.clientX - r.left - r.width/2) * .25,
-      y: (e.clientY - r.top - r.height/2) * .25,
-      duration: .35, ease: "power2.out"
-    });
-  });
-  btn.addEventListener('mouseleave', function(){
-    gsap.to(btn, {x:0, y:0, duration: .5, ease: "elastic.out(1,.4)"});
-  });
-});
-
+// Тап-эффекты (блик, рябь, сжатие)
 function tapFx(el, e){
   el.classList.remove('tapped');
   void el.offsetWidth;
@@ -920,32 +832,16 @@ function tapFx(el, e){
     setTimeout(function(){ s.remove(); }, 650);
   }
 }
-
-function burst(x, y){
-  for(var i=0;i<8;i++){
-    var s = document.createElement('i');
-    s.className = 'spark';
-    var a = Math.random() * Math.PI * 2;
-    var dist = 30 + Math.random()*55;
-    s.style.left = x + 'px';
-    s.style.top = y + 'px';
-    s.style.setProperty('--dx', (Math.cos(a)*dist) + 'px');
-    s.style.setProperty('--dy', (Math.sin(a)*dist) + 'px');
-    document.body.appendChild(s);
-    setTimeout((function(el){ return function(){ el.remove(); }; })(s), 700);
-  }
-}
-
 document.addEventListener('animationend', function(e){
   if(e.target.classList) e.target.classList.remove('tapped');
 });
-
 var TAPSEL = '.b-card,.g-card,.af,.c-card,.btn,.nav-cta,.b-add,.soc a,.polaroid,.rev-card,.step';
 document.addEventListener('pointerdown', function(e){
   var el = e.target.closest(TAPSEL);
   if(el){ tapFx(el, e); }
 }, {passive:true});
 
+// Зум галереи
 document.querySelectorAll('.g-card').forEach(function(g){
   g.addEventListener('click', function(){
     g.classList.add('zoomed');
@@ -953,6 +849,7 @@ document.querySelectorAll('.g-card').forEach(function(g){
   });
 });
 
+// Навбар, прогресс, кнопка "наверх", активные ссылки
 var navbar = document.getElementById('navbar');
 var navLinks = [].slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
 var secs = navLinks.map(function(a){ return document.querySelector(a.getAttribute('href')); });
@@ -966,11 +863,13 @@ window.addEventListener('resize', measureSecs);
 
 var toTop = document.getElementById('toTop');
 var ttCircle = toTop.querySelector('circle');
+var sp = document.getElementById('sp');
 window.addEventListener('scroll', function(){
   var y = window.scrollY;
   navbar.classList.toggle('scrolled', y > 80);
   var max = document.documentElement.scrollHeight - window.innerHeight;
   var prog = max > 0 ? y/max : 0;
+  if(sp) sp.style.width = (prog*100) + '%';
   toTop.classList.toggle('show', y > 600);
   if(ttCircle) ttCircle.style.strokeDashoffset = String(132 * (1 - prog));
   var line = y + window.innerHeight * 0.4;
@@ -985,6 +884,7 @@ toTop.addEventListener('click', function(){
   window.scrollTo({top:0, behavior:'smooth'});
 });
 
+// Бургер
 var burger = document.getElementById('burger'), mnav = document.getElementById('mnav');
 burger.addEventListener('click', function(){
   var open = mnav.classList.toggle('open');
@@ -1001,92 +901,26 @@ mnav.querySelectorAll('a').forEach(function(a){
   });
 });
 
-// Анимации появления
-try {
-  gsap.to('#sp', {
-    width: '100%', ease: "none",
-    scrollTrigger: {trigger: 'body', start: "top top", end: "bottom bottom", scrub: .3}
+// Плавный скролл по якорям — нативный
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var id = a.getAttribute('href');
+    if(id.length > 1){
+      e.preventDefault();
+      var t = document.querySelector(id);
+      if(t) t.scrollIntoView({behavior:'smooth', block:'start'});
+    }
   });
-  gsap.to('.hero .char', {y:0, opacity:1, duration:1, stagger:.03, ease:"power4.out", delay:.2});
-  gsap.to('.hero-badge', {opacity:1, duration:.7, delay:.1, ease:"back.out(1.7)"});
-  gsap.to('.hero-sub', {y:0, opacity:1, duration:.9, delay:1, ease:"power3.out"});
-  gsap.to('.hero-btns', {y:0, opacity:1, duration:.9, delay:1.2, ease:"power3.out"});
-  gsap.from('.polaroid', {y:40, opacity:0, duration:1, stagger:.18, ease:"back.out(1.5)", delay:.4});
+});
 
-  document.querySelectorAll('.sh h2 .word span').forEach(function(el){
-    gsap.to(el, {
-      y:0, duration:.9, ease:"power4.out",
-      scrollTrigger: {trigger: el, start: "top 90%"}
-    });
-  });
-  gsap.from('.about-ill', {x:-80, opacity:0, duration:1.1, ease:"power3.out", scrollTrigger:{trigger:'.about', start:"top 80%"}});
-  gsap.from('.about-txt', {x:60, opacity:0, duration:1.1, ease:"power3.out", scrollTrigger:{trigger:'.about', start:"top 80%"}});
-  gsap.from('.af', {y:30, opacity:0, duration:.7, stagger:.1, ease:"power3.out", scrollTrigger:{trigger:'.about-feats', start:"top 92%"}});
-  gsap.from('.b-card', {y:60, opacity:0, duration:.9, stagger:.08, ease:"power3.out", scrollTrigger:{trigger:'.bento', start:"top 85%"}});
-  ScrollTrigger.create({
-    trigger: '.bento', start: "top 85%", once: true,
-    onEnter: function(){ document.getElementById('bento').classList.add('in'); }
-  });
-
-  document.querySelectorAll('.b-card').forEach(function(card){
-    var tick = false;
-    card.addEventListener('mousemove', function(e){
-      if(tick) return;
-      tick = true;
-      requestAnimationFrame(function(){
-        var r = card.getBoundingClientRect();
-        gsap.to(card, {
-          rotateY: ((e.clientX - r.left)/r.width - .5) * 6,
-          rotateX: -((e.clientY - r.top)/r.height - .5) * 6,
-          transformPerspective: 1000, duration: .3
-        });
-        tick = false;
-      });
-    });
-    card.addEventListener('mouseleave', function(){
-      gsap.to(card, {rotateY:0, rotateX:0, duration:.5});
-    });
-  });
-
-  gsap.from('.step', {y:50, opacity:0, duration:.9, stagger:.15, ease:"back.out(1.4)", scrollTrigger:{trigger:'.steps-grid', start:"top 85%"}});
-
-  document.querySelectorAll('.st-num').forEach(function(el){
-    var target = +el.dataset.count;
-    var suf = el.dataset.suf || '';
-    var obj = {v:0};
-    ScrollTrigger.create({
-      trigger: el, start: "top 90%", once: true,
-      onEnter: function(){
-        gsap.to(obj, {
-          v: target, duration: 2, ease: "power2.out",
-          onUpdate: function(){
-            el.textContent = Math.floor(obj.v).toLocaleString('ru-RU') + suf;
-          }
-        });
-      }
-    });
-  });
-  gsap.from('.st', {y:36, opacity:0, duration:.7, stagger:.08, ease:"power3.out", scrollTrigger:{trigger:'.stats', start:"top 85%"}});
-  gsap.from('.g-card', {y:50, opacity:0, duration:.8, stagger:.08, ease:"power3.out", scrollTrigger:{trigger:'.g-scroll', start:"top 85%"}});
-  gsap.from('.rev-card', {y:50, opacity:0, duration:.8, stagger:.1, ease:"back.out(1.4)", scrollTrigger:{trigger:'.rev-grid', start:"top 85%"}});
-  gsap.from('.d-form', {y:50, opacity:0, scale:.96, duration:1, ease:"power3.out", scrollTrigger:{trigger:'.d-form', start:"top 85%"}});
-  gsap.from('.c-card', {y:36, opacity:0, duration:.7, stagger:.1, ease:"power3.out", scrollTrigger:{trigger:'.c-info', start:"top 85%"}});
-  gsap.from('.c-ill', {x:60, opacity:0, duration:1, ease:"power3.out", scrollTrigger:{trigger:'.c-grid', start:"top 80%"}});
-  gsap.from('.f-grid2 > *', {y:36, opacity:0, duration:.7, stagger:.08, ease:"power3.out", scrollTrigger:{trigger:'footer', start:"top 90%"}});
-} catch(animErr){
-  console.warn('Анимации упали, показываем контент как есть:', animErr);
-  // Если анимации упали — просто показываем контент
-  document.querySelectorAll('.hero .char').forEach(function(c){ c.style.transform='none'; c.style.opacity='1'; });
-  document.querySelectorAll('.hero-sub,.hero-btns').forEach(function(el){ el.style.opacity='1'; el.style.transform='none'; });
-  document.querySelectorAll('.sh h2 .word span').forEach(function(el){ el.style.transform='none'; });
-}
-
+// Маркиза — пауза при наведении
 var mt = document.querySelector('.mq-track'), mq = document.querySelector('.marquee');
 if(mt && mq){
   mq.addEventListener('mouseenter', function(){ mt.style.animationPlayState = 'paused'; });
   mq.addEventListener('mouseleave', function(){ mt.style.animationPlayState = 'running'; });
 }
 
+// Галерея — автопрокрутка и драг
 var gsc = document.getElementById('gScroll');
 if(gsc){
   var gAuto = true, gResumeT = null;
@@ -1133,17 +967,7 @@ if(gsc){
   }
 }
 
-document.querySelectorAll('a[href^="#"]').forEach(function(a){
-  a.addEventListener('click', function(e){
-    var id = a.getAttribute('href');
-    if(id.length > 1){
-      e.preventDefault();
-      var t = document.querySelector(id);
-      if(t) gsap.to(window, {duration:1, scrollTo:{y:t, offsetY:70}, ease:"power3.inOut"});
-    }
-  });
-});
-
+// Форма заказа
 document.getElementById('orderForm').addEventListener('submit', function(e){
   e.preventDefault();
   var f = e.target;
@@ -1165,33 +989,207 @@ document.getElementById('orderForm').addEventListener('submit', function(e){
     if(e2) e2.textContent = '';
   }
   if(!ok) return;
-  var btn = f.querySelector('button[type=submit]');
-  gsap.to(btn, {scale:.96, duration:.1, yoyo:true, repeat:1});
   burst(innerWidth/2, innerHeight/2);
   showToast('Букет заказан! Мы перезвоним 💐');
   f.reset();
 });
 
+// Кнопки "добавить"
 document.querySelectorAll('.b-add').forEach(function(btn){
   btn.addEventListener('click', function(){
-    gsap.to(this, {scale:1.25, rotation:360, duration:.45, ease:"back.out(1.7)"});
     var r = this.getBoundingClientRect();
     burst(r.left + r.width/2, r.top + r.height/2);
     showToast('Добавили в подборку!');
   });
 });
 
-function showToast(msg){
-  var n = document.createElement('div');
-  n.textContent = msg;
-  n.style.cssText = 'position:fixed;top:90px;left:50%;transform:translateX(-50%);background:#fff;color:#3d282e;padding:14px 26px;border-radius:14px;z-index:9999;font-weight:700;font-size:14px;box-shadow:0 12px 30px rgba(176,64,92,.2);border:2px solid rgba(212,91,120,.3)';
-  document.body.appendChild(n);
-  gsap.from(n, {y:-20, opacity:0, duration:.4, ease:'back.out(1.7)'});
-  setTimeout(function(){
-    gsap.to(n, {opacity:0, y:-10, duration:.3, onComplete:function(){ n.remove(); }});
-  }, 1800);
+// ============ КАСТОМНЫЙ КУРСОР (нативный, без GSAP) ============
+var cursor = document.querySelector('.cursor');
+var follower = document.querySelector('.cursor-follower');
+var mx=-100, my=-100, fx=-100, fy=-100;
+document.addEventListener('mousemove', function(e){
+  mx = e.clientX; my = e.clientY;
+  cursor.style.left = mx + 'px';
+  cursor.style.top = my + 'px';
+}, {passive:true});
+(function ac(){
+  fx += (mx - fx) * .18;
+  fy += (my - fy) * .18;
+  follower.style.left = fx + 'px';
+  follower.style.top = fy + 'px';
+  requestAnimationFrame(ac);
+})();
+document.querySelectorAll('a,button,.b-card,.af,.c-card,.g-card,.rev-card,.step,.polaroid').forEach(function(el){
+  el.addEventListener('mouseenter', function(){ cursor.classList.add('hover'); });
+  el.addEventListener('mouseleave', function(){ cursor.classList.remove('hover'); });
+});
+
+// ============ GSAP АНИМАЦИИ (только если загрузились) ============
+function whenGsap(cb){
+  if(window.gsap && window.ScrollTrigger && window.ScrollToPlugin){
+    try { cb(); } catch(e){ console.warn('GSAP error:', e); }
+    return;
+  }
+  var delays = [100, 300, 800, 2000];
+  var attempt = 0;
+  function tryAgain(){
+    attempt++;
+    if(window.gsap && window.ScrollTrigger && window.ScrollToPlugin){
+      try { cb(); } catch(e){ console.warn('GSAP error:', e); }
+      return;
+    }
+    if(attempt < delays.length){
+      setTimeout(tryAgain, delays[attempt] - (delays[attempt-1]||0));
+    } else {
+      // GSAP не загрузился — показываем всё как есть
+      console.warn('GSAP не загрузился, показываем контент без анимаций');
+      document.querySelectorAll('.hero .char').forEach(function(c){
+        c.style.transform = 'none'; c.style.opacity = '1';
+      });
+      document.querySelectorAll('.hero-sub,.hero-btns,.hero-badge').forEach(function(el){
+        el.style.opacity = '1'; el.style.transform = 'none';
+      });
+      document.querySelectorAll('.sh h2 .word span').forEach(function(el){
+        el.style.transform = 'none';
+      });
+      var bento = document.getElementById('bento');
+      if(bento) bento.classList.add('in');
+    }
+  }
+  tryAgain();
 }
 
+whenGsap(function(){
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+// 3D логотип при ховере (только десктоп)
+if(matchMedia('(pointer:fine)').matches){
+  document.querySelectorAll('.logo3d-wrap').forEach(function(w){
+    var svg = w.querySelector('.logo3d');
+    if(!svg) return;
+    w.addEventListener('mouseenter', function(){ svg.style.animation = 'none'; });
+    w.addEventListener('mousemove', function(e){
+      var r = w.getBoundingClientRect();
+      var px = (e.clientX - r.left)/r.width - .5;
+      var py = (e.clientY - r.top)/r.height - .5;
+      gsap.to(svg, {rotateY: px*40, rotateX: -py*28, duration: .4, ease: 'power2.out', transformPerspective: 700});
+    });
+    w.addEventListener('mouseleave', function(){
+      gsap.to(svg, {
+        rotateY: 0, rotateX: 0, duration: .9,
+        ease: 'elastic.out(1,.4)', transformPerspective: 700,
+        onComplete: function(){ svg.style.animation = ''; svg.style.transform = ''; }
+      });
+    });
+  });
+  // След-петал за курсором
+  var lastSpark = 0;
+  document.addEventListener('mousemove', function(e){
+    var now = Date.now();
+    if(now - lastSpark < 40) return;
+    lastSpark = now;
+    var s = document.createElement('i');
+    s.className = 'ctrail';
+    s.style.left = e.clientX + 'px';
+    s.style.top = e.clientY + 'px';
+    document.body.appendChild(s);
+    setTimeout(function(){ s.remove(); }, 520);
+  }, {passive:true});
+}
+
+// Магнитные кнопки
+document.querySelectorAll('.magnetic').forEach(function(btn){
+  btn.addEventListener('mousemove', function(e){
+    var r = btn.getBoundingClientRect();
+    gsap.to(btn, {
+      x: (e.clientX - r.left - r.width/2) * .25,
+      y: (e.clientY - r.top - r.height/2) * .25,
+      duration: .35, ease: "power2.out"
+    });
+  });
+  btn.addEventListener('mouseleave', function(){
+    gsap.to(btn, {x:0, y:0, duration: .5, ease: "elastic.out(1,.4)"});
+  });
+});
+
+// Анимации появления при скролле
+try {
+  gsap.to('.hero .char', {y:0, opacity:1, duration:1, stagger:.03, ease:"power4.out", delay:.2});
+  gsap.to('.hero-badge', {opacity:1, duration:.7, delay:.1, ease:"back.out(1.7)"});
+  gsap.to('.hero-sub', {y:0, opacity:1, duration:.9, delay:1, ease:"power3.out"});
+  gsap.to('.hero-btns', {y:0, opacity:1, duration:.9, delay:1.2, ease:"power3.out"});
+  gsap.from('.polaroid', {y:40, opacity:0, duration:1, stagger:.18, ease:"back.out(1.5)", delay:.4});
+
+  document.querySelectorAll('.sh h2 .word span').forEach(function(el){
+    gsap.to(el, {
+      y:0, duration:.9, ease:"power4.out",
+      scrollTrigger: {trigger: el, start: "top 90%"}
+    });
+  });
+  gsap.from('.about-ill', {x:-80, opacity:0, duration:1.1, ease:"power3.out", scrollTrigger:{trigger:'.about', start:"top 80%"}});
+  gsap.from('.about-txt', {x:60, opacity:0, duration:1.1, ease:"power3.out", scrollTrigger:{trigger:'.about', start:"top 80%"}});
+  gsap.from('.af', {y:30, opacity:0, duration:.7, stagger:.1, ease:"power3.out", scrollTrigger:{trigger:'.about-feats', start:"top 92%"}});
+  gsap.from('.b-card', {y:60, opacity:0, duration:.9, stagger:.08, ease:"power3.out", scrollTrigger:{trigger:'.bento', start:"top 85%"}});
+  ScrollTrigger.create({
+    trigger: '.bento', start: "top 85%", once: true,
+    onEnter: function(){ document.getElementById('bento').classList.add('in'); }
+  });
+
+  // 3D наклон карточек букетов
+  document.querySelectorAll('.b-card').forEach(function(card){
+    var tick = false;
+    card.addEventListener('mousemove', function(e){
+      if(tick) return;
+      tick = true;
+      requestAnimationFrame(function(){
+        var r = card.getBoundingClientRect();
+        gsap.to(card, {
+          rotateY: ((e.clientX - r.left)/r.width - .5) * 6,
+          rotateX: -((e.clientY - r.top)/r.height - .5) * 6,
+          transformPerspective: 1000, duration: .3
+        });
+        tick = false;
+      });
+    });
+    card.addEventListener('mouseleave', function(){
+      gsap.to(card, {rotateY:0, rotateX:0, duration:.5});
+    });
+  });
+
+  gsap.from('.step', {y:50, opacity:0, duration:.9, stagger:.15, ease:"back.out(1.4)", scrollTrigger:{trigger:'.steps-grid', start:"top 85%"}});
+
+  // Счётчики цифр
+  document.querySelectorAll('.st-num').forEach(function(el){
+    var target = +el.dataset.count;
+    var suf = el.dataset.suf || '';
+    var obj = {v:0};
+    ScrollTrigger.create({
+      trigger: el, start: "top 90%", once: true,
+      onEnter: function(){
+        gsap.to(obj, {
+          v: target, duration: 2, ease: "power2.out",
+          onUpdate: function(){
+            el.textContent = Math.floor(obj.v).toLocaleString('ru-RU') + suf;
+          }
+        });
+      }
+    });
+  });
+  gsap.from('.st', {y:36, opacity:0, duration:.7, stagger:.08, ease:"power3.out", scrollTrigger:{trigger:'.stats', start:"top 85%"}});
+  gsap.from('.g-card', {y:50, opacity:0, duration:.8, stagger:.08, ease:"power3.out", scrollTrigger:{trigger:'.g-scroll', start:"top 85%"}});
+  gsap.from('.rev-card', {y:50, opacity:0, duration:.8, stagger:.1, ease:"back.out(1.4)", scrollTrigger:{trigger:'.rev-grid', start:"top 85%"}});
+  gsap.from('.d-form', {y:50, opacity:0, scale:.96, duration:1, ease:"power3.out", scrollTrigger:{trigger:'.d-form', start:"top 85%"}});
+  gsap.from('.c-card', {y:36, opacity:0, duration:.7, stagger:.1, ease:"power3.out", scrollTrigger:{trigger:'.c-info', start:"top 85%"}});
+  gsap.from('.c-ill', {x:60, opacity:0, duration:1, ease:"power3.out", scrollTrigger:{trigger:'.c-grid', start:"top 80%"}});
+  gsap.from('.f-grid2 > *', {y:36, opacity:0, duration:.7, stagger:.08, ease:"power3.out", scrollTrigger:{trigger:'footer', start:"top 90%"}});
+} catch(animErr){
+  console.warn('Анимации упали:', animErr);
+  document.querySelectorAll('.hero .char').forEach(function(c){ c.style.transform='none'; c.style.opacity='1'; });
+  document.querySelectorAll('.hero-sub,.hero-btns,.hero-badge').forEach(function(el){ el.style.opacity='1'; el.style.transform='none'; });
+  document.querySelectorAll('.sh h2 .word span').forEach(function(el){ el.style.transform='none'; });
+  var bento = document.getElementById('bento');
+  if(bento) bento.classList.add('in');
+}
 }); // конец whenGsap
 </script>
 </body>
