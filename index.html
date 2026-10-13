@@ -161,24 +161,24 @@ section{padding:100px 56px;position:relative}
 .sh h2 .word{display:inline-block;overflow:hidden;padding:0 3px}
 .sh h2 .word span{display:inline-block;transform:translateY(110%);will-change:transform}
 .sh p{font-size:16px;color:var(--mut);line-height:1.7;font-weight:500}
-/* ===== О НАС — чисто и ровно, без пустот ===== */
-.about{background:var(--bg);padding:60px 56px}
-.about-grid{max-width:1150px;margin:0 auto;display:grid;grid-template-columns:360px 1fr;gap:56px;align-items:stretch}
+/* ===== О НАС — без пустот: фото тянется ровно под текст ===== */
+.about{background:var(--bg);padding:46px 56px}
+.about-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:330px 1fr;gap:46px;align-items:stretch}
 .about-ill{position:relative}
-.about-ill .main{width:100%;height:100%;min-height:440px;border-radius:180px 180px 24px 24px;overflow:hidden;border:8px solid #fff;box-shadow:0 30px 70px rgba(176,64,92,.18);position:relative}
+.about-ill .main{width:100%;height:100%;border-radius:165px 165px 22px 22px;overflow:hidden;border:7px solid #fff;box-shadow:0 26px 60px rgba(176,64,92,.18);position:relative}
 .about-ill .main .ph{height:100%}
 .about-txt{display:flex;flex-direction:column;justify-content:center}
-.about-txt .sh{margin-bottom:20px}
-.about-txt h2{font-size:clamp(30px,4vw,46px);color:var(--fg);margin-bottom:18px;line-height:1.1;font-weight:700}
+.about-txt .sh{margin-bottom:16px}
+.about-txt h2{font-size:clamp(28px,3.6vw,42px);color:var(--fg);margin-bottom:14px;line-height:1.1;font-weight:700}
 .about-txt h2 em{color:var(--acc);font-style:italic}
-.about-txt p{font-size:15px;line-height:1.8;color:var(--mut);margin-bottom:12px;font-weight:500}
-.about-feats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
-.af{display:flex;align-items:flex-start;gap:13px;padding:16px;background:var(--card);border-radius:16px;border:1px solid var(--line);transition:all .4s var(--ease);position:relative;overflow:hidden;box-shadow:0 6px 20px rgba(176,64,92,.07)}
+.about-txt p{font-size:14.5px;line-height:1.7;color:var(--mut);margin-bottom:10px;font-weight:500}
+.about-feats{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:16px}
+.af{display:flex;align-items:flex-start;gap:12px;padding:13px 15px;background:var(--card);border-radius:15px;border:1px solid var(--line);transition:all .4s var(--ease);position:relative;overflow:hidden;box-shadow:0 6px 20px rgba(176,64,92,.07)}
 .af:hover{transform:translateY(-6px);border-color:rgba(212,91,120,.5);box-shadow:0 18px 44px rgba(212,91,120,.18)}
 .af .ic{color:var(--acc);transition:transform .4s var(--ease)}
 .af:hover .ic{transform:rotate(-8deg) scale(1.15)}
-.af h4{font-size:15px;margin-bottom:2px;font-family:var(--fb);font-weight:700;color:var(--fg)}
-.af p{font-size:12px;color:var(--mut);margin:0;font-weight:500}
+.af h4{font-size:14.5px;margin-bottom:1px;font-family:var(--fb);font-weight:700;color:var(--fg)}
+.af p{font-size:11.5px;color:var(--mut);margin:0;font-weight:500}
 .bouquets{background:var(--bg2);overflow:hidden}
 .bento{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:20px}
 .b-card{border-radius:22px;overflow:hidden;position:relative;border:1px solid var(--line);background:var(--card);transition:transform .4s var(--ease),border-color .4s,box-shadow .4s;box-shadow:0 8px 24px rgba(176,64,92,.08);display:flex;flex-direction:column}
@@ -295,10 +295,10 @@ footer{background:var(--card);color:var(--fg);padding:80px 56px 36px;border-top:
 .hero-btns{justify-content:center}
 .hero-collage{gap:18px}
 .polaroid{max-width:200px}
-.about{padding:50px 24px}
-.about-grid{grid-template-columns:1fr;gap:34px;max-width:640px}
-.about-ill{max-width:300px;width:100%;margin:0 auto}
-.about-ill .main{min-height:0;aspect-ratio:3/4;height:auto}
+.about{padding:40px 24px}
+.about-grid{grid-template-columns:1fr;gap:30px;max-width:640px}
+.about-ill{max-width:270px;width:100%;margin:0 auto}
+.about-ill .main{height:auto;aspect-ratio:3/4}
 .about-txt{text-align:center}
 .about-txt .sh{margin-left:auto;margin-right:auto}
 .about-feats{text-align:left}
@@ -332,7 +332,7 @@ nav,section{padding-left:24px;padding-right:24px}
 @media(max-width:600px){
 section{padding:76px 20px}
 nav{padding:14px 20px}nav.scrolled{padding:12px 20px}
-.about{padding:42px 20px}
+.about{padding:36px 20px}
 .about-feats,.st-grid{grid-template-columns:1fr}
 .hero-badge{font-size:9px;padding:7px 16px;letter-spacing:2px}
 .g-card{flex:0 0 78vw}
@@ -580,164 +580,3 @@ nav{padding:14px 20px}nav.scrolled{padding:12px 20px}
 <p>Доставка цветов и букетов · Магазин цветов</p>
 <div class="ratingline">★ 4,5 · 11 оценок · Открыто до 21:00</div>
 <div class="soc" style="margin-top:20px">
-<a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
-<a href="#" aria-label="VK"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h4v6a3 3 0 003-3V7h3v6h3l3-6h3l-3 7 3 7h-4l-3-6h-3v6H9a6 6 0 01-6-6z"/></svg></a>
-<a href="#" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></a>
-</div>
-</div>
-<div class="f-col"><h4>Разделы</h4><ul><li><a href="#about">О нас</a></li><li><a href="#bouquets">Букеты</a></li><li><a href="#gallery">Галерея</a></li></ul></div>
-<div class="f-col"><h4>Информация</h4><ul><li><a href="#delivery">Доставка</a></li><li><a href="#reviews">Отзывы</a></li><li><a href="#contacts">Контакты</a></li></ul></div>
-</div>
-<div class="f-bot"><span>© <span id="yr"></span> Цветы · Магазин цветов</span><span class="f-age">4,5 ★</span></div>
-</footer>
-<script>
-document.getElementById('yr').textContent=new Date().getFullYear();
-var ISMOB=window.innerWidth<768;
-var LOGO_SVG='<svg class="logo3d" viewBox="0 0 96 96"><use href="#lg-bloom"/></svg>';
-(function(){var w=document.querySelectorAll('[data-logo]');for(var i=0;i<w.length;i++){w[i].innerHTML=LOGO_SVG;}})();
-(function(){
-  var c=document.getElementById('petals');if(!c)return;var ctx=c.getContext('2d');if(!ctx)return;
-  var W=0,H=0,petals=[],scrollY=0,lastSY=0,sv=0,hidden=false;
-  var COUNT=ISMOB?14:(window.innerWidth<1200?26:40);
-  var COLORS=['#d45b78','#e895aa','#4f9a70','#f7c3cf','#b0405c'];
-  var fineP=false;try{fineP=matchMedia('(pointer:fine)').matches}catch(e){}
-  var pmx=-999,pmy=-999;
-  function resize(){var d=ISMOB?1:Math.min(window.devicePixelRatio||1,1.5);W=window.innerWidth;H=window.innerHeight;c.width=W*d;c.height=H*d;c.style.width=W+'px';c.style.height=H+'px';ctx.setTransform(d,0,0,d,0,0);}
-  resize();
-  function makePetal(init){var z=.35+Math.random()*.65;return{x:Math.random()*W,y:init?Math.random()*H:-30-Math.random()*60,z:z,r:(7+Math.random()*11)*z,rot:Math.random()*Math.PI*2,rotSpd:(Math.random()-.5)*.02,vy:(.3+Math.random()*.5)*z,swayAmp:10+Math.random()*20,swayPh:Math.random()*Math.PI*2,swayFr:.004+Math.random()*.006,col:COLORS[(Math.random()*COLORS.length)|0]};}
-  for(var i=0;i<COUNT;i++)petals.push(makePetal(true));
-  window.addEventListener('resize',function(){resize();petals=[];for(var i=0;i<COUNT;i++)petals.push(makePetal(true));},{passive:true});
-  window.addEventListener('scroll',function(){scrollY=window.scrollY},{passive:true});
-  document.addEventListener('visibilitychange',function(){hidden=document.hidden});
-  if(fineP){document.addEventListener('mousemove',function(e){pmx=e.clientX;pmy=e.clientY},{passive:true});}
-  var t=0;
-  function drawPetal(p,px,py){ctx.save();ctx.translate(px,py);ctx.rotate(p.rot);ctx.globalAlpha=.35+p.z*.5;ctx.fillStyle=p.col;ctx.beginPath();ctx.ellipse(0,0,p.r,p.r*.45,0,0,Math.PI*2);ctx.fill();ctx.restore();}
-  (function loop(){requestAnimationFrame(loop);if(hidden)return;ctx.clearRect(0,0,W,H);t++;sv=Math.min(Math.abs(scrollY-lastSY)*.35,7);lastSY=scrollY;
-    for(var i=0;i<petals.length;i++){var p=petals[i];p.y+=p.vy+sv*p.z;p.rot+=p.rotSpd;if(p.y>H+60){petals[i]=makePetal(false);p=petals[i];}
-      var px=p.x+Math.sin(t*p.swayFr+p.swayPh)*p.swayAmp;var py=p.y+scrollY*(p.z*.12);py=((py%(H+80))+(H+80))%(H+80)-40;
-      if(fineP){var dx=px-pmx,dy=py-pmy,d=Math.sqrt(dx*dx+dy*dy);if(d<140&&d>0){px+=dx/d*1.6;py+=dy/d*1.6;}}
-      drawPetal(p,px,py);}
-  })();
-})();
-var preHidden=false,preStart=Date.now();
-function openSite(){if(preHidden)return;preHidden=true;var p=document.getElementById('pre');if(p)p.classList.add('hidden');document.body.classList.remove('loading');}
-window.addEventListener('load',function(){var wait=Math.max(0,600-(Date.now()-preStart));setTimeout(openSite,wait);});
-setTimeout(openSite,1600);
-var lp={v:0};
-(function tick(){lp.v=Math.min(100,lp.v+Math.random()*14+6);var f=document.getElementById('preFill'),pc=document.getElementById('prePct');if(f)f.style.width=lp.v+'%';if(pc)pc.textContent=Math.floor(lp.v)+'%';if(lp.v<100)setTimeout(tick,60);})();
-(function(){var el=document.getElementById('rotWord');if(!el)return;var words=['роз','пионов','тюльпанов','эвкалипта','гортензий'];var i=0;setInterval(function(){i=(i+1)%words.length;el.classList.remove('flip');void el.offsetWidth;el.textContent=words[i];el.classList.add('flip');},2200);})();
-function whenGsap(cb){if(window.gsap&&window.ScrollTrigger){cb();return;}setTimeout(function(){whenGsap(cb)},50);}
-whenGsap(function(){
-gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
-var cursor=document.querySelector('.cursor'),follower=document.querySelector('.cursor-follower');
-var mx=-100,my=-100,fx=-100,fy=-100;
-document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';},{passive:true});
-(function ac(){fx+=(mx-fx)*.18;fy+=(my-fy)*.18;follower.style.left=fx+'px';follower.style.top=fy+'px';requestAnimationFrame(ac)})();
-document.querySelectorAll('a,button,.b-card,.af,.c-card,.g-card,.rev-card,.step,.polaroid').forEach(function(el){el.addEventListener('mouseenter',function(){cursor.classList.add('hover')});el.addEventListener('mouseleave',function(){cursor.classList.remove('hover')});});
-if(matchMedia('(pointer:fine)').matches){
-  document.querySelectorAll('.logo3d-wrap').forEach(function(w){var svg=w.querySelector('.logo3d');if(!svg)return;
-    w.addEventListener('mouseenter',function(){svg.style.animation='none';});
-    w.addEventListener('mousemove',function(e){var r=w.getBoundingClientRect();var px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;gsap.to(svg,{rotateY:px*40,rotateX:-py*28,duration:.4,ease:'power2.out',transformPerspective:700});});
-    w.addEventListener('mouseleave',function(){gsap.to(svg,{rotateY:0,rotateX:0,duration:.9,ease:'elastic.out(1,.4)',transformPerspective:700,onComplete:function(){svg.style.animation='';svg.style.transform='';}});});
-  });
-  var lastSpark=0;
-  document.addEventListener('mousemove',function(e){var now=Date.now();if(now-lastSpark<40)return;lastSpark=now;var s=document.createElement('i');s.className='ctrail';s.style.left=e.clientX+'px';s.style.top=e.clientY+'px';document.body.appendChild(s);setTimeout(function(){s.remove()},520);},{passive:true});
-}
-document.querySelectorAll('.magnetic').forEach(function(btn){btn.addEventListener('mousemove',function(e){var r=btn.getBoundingClientRect();gsap.to(btn,{x:(e.clientX-r.left-r.width/2)*.25,y:(e.clientY-r.top-r.height/2)*.25,duration:.35,ease:"power2.out"});});btn.addEventListener('mouseleave',function(){gsap.to(btn,{x:0,y:0,duration:.5,ease:"elastic.out(1,.4)"})});});
-function tapFx(el,e){
-  el.classList.remove('tapped');void el.offsetWidth;el.classList.add('tapped');
-  var sh=document.createElement('i');sh.className='sheen';el.appendChild(sh);setTimeout(function(){sh.remove()},750);
-  if(e&&e.clientX!==undefined){var r=el.getBoundingClientRect();var s=document.createElement('span');s.className='rip';var d=Math.max(r.width,r.height);s.style.width=d+'px';s.style.height=d+'px';s.style.left=(e.clientX-r.left-d/2)+'px';s.style.top=(e.clientY-r.top-d/2)+'px';el.appendChild(s);setTimeout(function(){s.remove()},650);}
-}
-function burst(x,y){for(var i=0;i<8;i++){var s=document.createElement('i');s.className='spark';var a=Math.random()*Math.PI*2,dist=30+Math.random()*55;s.style.left=x+'px';s.style.top=y+'px';s.style.setProperty('--dx',(Math.cos(a)*dist)+'px');s.style.setProperty('--dy',(Math.sin(a)*dist)+'px');document.body.appendChild(s);setTimeout(function(el){return function(){el.remove()}}(s),700);}}
-document.addEventListener('animationend',function(e){if(e.target.classList)e.target.classList.remove('tapped')});
-var TAPSEL='.b-card,.g-card,.af,.c-card,.btn,.nav-cta,.b-add,.soc a,.polaroid,.rev-card,.step';
-document.addEventListener('pointerdown',function(e){var el=e.target.closest(TAPSEL);if(el){tapFx(el,e);}},{passive:true});
-document.querySelectorAll('.g-card').forEach(function(g){g.addEventListener('click',function(){g.classList.add('zoomed');setTimeout(function(){g.classList.remove('zoomed')},600);});});
-var navbar=document.getElementById('navbar');
-var navLinks=[].slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
-var secs=navLinks.map(function(a){return document.querySelector(a.getAttribute('href'))});
-var secsTop=[];
-function measureSecs(){secsTop=secs.map(function(el){return el?el.offsetTop:0});}
-measureSecs();
-window.addEventListener('load',measureSecs);
-window.addEventListener('resize',measureSecs);
-var toTop=document.getElementById('toTop');
-var ttCircle=toTop.querySelector('circle');
-window.addEventListener('scroll',function(){
-  var y=window.scrollY;
-  navbar.classList.toggle('scrolled',y>80);
-  var max=document.documentElement.scrollHeight-window.innerHeight;
-  var prog=max>0?y/max:0;
-  toTop.classList.toggle('show',y>600);
-  if(ttCircle)ttCircle.style.strokeDashoffset=String(132*(1-prog));
-  var line=y+window.innerHeight*0.4;var cur=0;
-  for(var i=0;i<secsTop.length;i++){if(secsTop[i]<=line)cur=i;}
-  navLinks.forEach(function(a,i){a.classList.toggle('active',i===cur)});
-},{passive:true});
-toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
-var burger=document.getElementById('burger'),mnav=document.getElementById('mnav');
-burger.addEventListener('click',function(){var open=mnav.classList.toggle('open');burger.children[0].style.transform=open?'translateY(6.5px) rotate(45deg)':'';burger.children[1].style.opacity=open?'0':'1';burger.children[2].style.transform=open?'translateY(-6.5px) rotate(-45deg)':'';});
-mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mnav.classList.remove('open');burger.children[0].style.transform='';burger.children[1].style.opacity='1';burger.children[2].style.transform='';})});
-var heroH1=document.getElementById('heroTitle');
-(function(){heroH1.innerHTML='';var parts=[{t:'Нежные',it:false},{t:'цветы',it:true},{t:'для',it:false,sg:true},{t:'ваших',it:true},{t:'моментов',it:false}];parts.forEach(function(p,idx){var wrap=document.createElement('span');if(p.it)wrap.className='it';if(p.sg)wrap.className='sg';wrap.style.display='inline-block';p.t.split('').forEach(function(c){var ch=document.createElement('span');ch.className='char';ch.textContent=(c===' ')?'\u00A0':c;wrap.appendChild(ch);});heroH1.appendChild(wrap);if(idx<parts.length-1)heroH1.appendChild(document.createTextNode(' '));});})();
-gsap.to('#sp',{width:'100%',ease:"none",scrollTrigger:{trigger:'body',start:"top top",end:"bottom bottom",scrub:.3}});
-gsap.to('.hero .char',{y:0,opacity:1,duration:1,stagger:.03,ease:"power4.out",delay:.2});
-gsap.to('.hero-badge',{opacity:1,duration:.7,delay:.1,ease:"back.out(1.7)"});
-gsap.to('.hero-sub',{y:0,opacity:1,duration:.9,delay:1,ease:"power3.out"});
-gsap.to('.hero-btns',{y:0,opacity:1,duration:.9,delay:1.2,ease:"power3.out"});
-gsap.from('.polaroid',{y:40,opacity:0,duration:1,stagger:.18,ease:"back.out(1.5)",delay:.4});
-document.querySelectorAll('.sh h2 .word span').forEach(function(el){gsap.to(el,{y:0,duration:.9,ease:"power4.out",scrollTrigger:{trigger:el,start:"top 90%"}});});
-gsap.from('.about-ill',{x:-80,opacity:0,duration:1.1,ease:"power3.out",scrollTrigger:{trigger:'.about',start:"top 78%"}});
-gsap.from('.about-txt',{x:60,opacity:0,duration:1.1,ease:"power3.out",scrollTrigger:{trigger:'.about',start:"top 78%"}});
-gsap.from('.af',{y:30,opacity:0,duration:.7,stagger:.1,ease:"power3.out",scrollTrigger:{trigger:'.about-feats',start:"top 92%"}});
-gsap.from('.b-card',{y:60,opacity:0,duration:.9,stagger:.08,ease:"power3.out",scrollTrigger:{trigger:'.bento',start:"top 85%"}});
-ScrollTrigger.create({trigger:'.bento',start:"top 85%",once:true,onEnter:function(){document.getElementById('bento').classList.add('in')}});
-document.querySelectorAll('.b-card').forEach(function(card){var tick=false;card.addEventListener('mousemove',function(e){if(tick)return;tick=true;requestAnimationFrame(function(){var r=card.getBoundingClientRect();gsap.to(card,{rotateY:((e.clientX-r.left)/r.width-.5)*6,rotateX:-((e.clientY-r.top)/r.height-.5)*6,transformPerspective:1000,duration:.3});tick=false;});});card.addEventListener('mouseleave',function(){gsap.to(card,{rotateY:0,rotateX:0,duration:.5})});});
-gsap.from('.step',{y:50,opacity:0,duration:.9,stagger:.15,ease:"back.out(1.4)",scrollTrigger:{trigger:'.steps-grid',start:"top 85%"}});
-document.querySelectorAll('.st-num').forEach(function(el){var target=+el.dataset.count,suf=el.dataset.suf||'';var obj={v:0};ScrollTrigger.create({trigger:el,start:"top 90%",once:true,onEnter:function(){gsap.to(obj,{v:target,duration:2,ease:"power2.out",onUpdate:function(){el.textContent=Math.floor(obj.v).toLocaleString('ru-RU')+suf}});}});});
-gsap.from('.st',{y:36,opacity:0,duration:.7,stagger:.08,ease:"power3.out",scrollTrigger:{trigger:'.stats',start:"top 85%"}});
-gsap.from('.g-card',{y:50,opacity:0,duration:.8,stagger:.08,ease:"power3.out",scrollTrigger:{trigger:'.g-scroll',start:"top 85%"}});
-var REVIEWS=[
- {n:'Vikrotia Chi',l:'Знаток города 5 уровня',t:'Замечательное место! Срочно потребовался букет на неожиданный праздник. Обратились в данный магазин, зная неординарные вкусы получательницы букета…'},
- {n:'Alina Teushacova',l:'Знаток города 3 уровня',t:'Прекрасный магазинчик с прекрасными букетами. Флорист Александра быстро собрала мне красивый букет.'},
- {n:'Владимир Шевченко',l:'Знаток города 2 уровня',t:'Хороший салон, очень профессиональный персонал сделали очень красивый букет что аж жена простила за то, что я пришёл в 5 утра домой с гулянки'},
- {n:'Елизавета Ш.',l:'Знаток города 2 уровня',t:'Клиентоориентированность на высшем уровне, доброжелательные сотрудники, цветочки отличные 😊'},
- {n:'Вероника Ш.',l:'Знаток города 2 уровня',t:'Хороший салон со всеми помогли и собрали очень красивый букет'},
- {n:'Aaanyto4ka',l:'Знаток города 6 уровня',t:'Замечательный магазин! Персонал вежливый, выбор хороший'},
- {n:'Мария Павлова',l:'Знаток города 2 уровня',t:'Прекрасный цветочный салон, цветочки всегда свежие'}
-];
-(function(){var rg=document.getElementById('revGrid');if(!rg)return;rg.innerHTML=REVIEWS.map(function(r){return '<div class="rev-card"><div class="qmark">❝</div><div class="rev-head"><div class="ava">'+r.n.charAt(0)+'</div><div><div class="nm">'+r.n+'</div><div class="lvl">'+r.l+'</div></div></div><div class="stars">★★★★★</div><div class="txt">'+r.t+'</div></div>'}).join('');})();
-gsap.from('.rev-card',{y:50,opacity:0,duration:.8,stagger:.1,ease:"back.out(1.4)",scrollTrigger:{trigger:'.rev-grid',start:"top 85%"}});
-gsap.from('.d-form',{y:50,opacity:0,scale:.96,duration:1,ease:"power3.out",scrollTrigger:{trigger:'.d-form',start:"top 85%"}});
-gsap.from('.c-card',{y:36,opacity:0,duration:.7,stagger:.1,ease:"power3.out",scrollTrigger:{trigger:'.c-info',start:"top 85%"}});
-gsap.from('.c-ill',{x:60,opacity:0,duration:1,ease:"power3.out",scrollTrigger:{trigger:'.c-grid',start:"top 80%"}});
-gsap.from('.f-grid2 > *',{y:36,opacity:0,duration:.7,stagger:.08,ease:"power3.out",scrollTrigger:{trigger:'footer',start:"top 90%"}});
-var mt=document.querySelector('.mq-track'),mq=document.querySelector('.marquee');
-if(mt&&mq){mq.addEventListener('mouseenter',function(){mt.style.animationPlayState='paused'});mq.addEventListener('mouseleave',function(){mt.style.animationPlayState='running'});}
-var gsc=document.getElementById('gScroll');
-if(gsc){
-  var gAuto=true,gResumeT=null;
-  function gPause(){gAuto=false;clearTimeout(gResumeT);gResumeT=setTimeout(function(){gAuto=true},2000);}
-  gsc.addEventListener('mouseenter',function(){gAuto=false});
-  gsc.addEventListener('mouseleave',function(){gResumeT=setTimeout(function(){gAuto=true},800)});
-  gsc.addEventListener('touchstart',gPause,{passive:true});
-  gsc.addEventListener('pointerdown',gPause);
-  (function drift(){requestAnimationFrame(drift);if(!gAuto||document.hidden)return;var max=gsc.scrollWidth-gsc.clientWidth;if(max<=0)return;gsc.scrollLeft+=ISMOB?1:0.5;if(gsc.scrollLeft>=max-1)gsc.scrollLeft=0;})();
-  if(matchMedia('(pointer:fine)').matches){var down=false,sx=0,sl=0,moved=0;gsc.addEventListener('mousedown',function(e){down=true;moved=0;sx=e.clientX;sl=gsc.scrollLeft;gsc.style.cursor='grabbing';gPause();});window.addEventListener('mousemove',function(e){if(!down)return;var dx=e.clientX-sx;moved=Math.abs(dx);gsc.scrollLeft=sl-dx;});window.addEventListener('mouseup',function(){down=false;gsc.style.cursor='';gPause();});gsc.addEventListener('click',function(e){if(moved>8){e.preventDefault();e.stopPropagation();}},true);}
-}
-document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length>1){e.preventDefault();var t=document.querySelector(id);if(t)gsap.to(window,{duration:1,scrollTo:{y:t,offsetY:70},ease:"power3.inOut"});}});});
-document.getElementById('orderForm').addEventListener('submit',function(e){e.preventDefault();var f=e.target;var ok=true;var name=f.querySelector('input[type=text]'),phone=f.querySelector('input[type=tel]');if(name&&!name.value.trim()){f.querySelector('[data-e=name]').textContent='Укажите имя';ok=false}else{var e1=f.querySelector('[data-e=name]');if(e1)e1.textContent=''}if(phone&&phone.value.replace(/\D/g,'').length<10){f.querySelector('[data-e=phone]').textContent='Укажите телефон';ok=false}else{var e2=f.querySelector('[data-e=phone]');if(e2)e2.textContent=''}if(!ok)return;var btn=f.querySelector('button[type=submit]');gsap.to(btn,{scale:.96,duration:.1,yoyo:true,repeat:1});burst(innerWidth/2,innerHeight/2);showToast('Букет заказан! Мы перезвоним 💐');f.reset();});
-document.querySelectorAll('.b-add').forEach(function(btn){btn.addEventListener('click',function(){gsap.to(this,{scale:1.25,rotation:360,duration:.45,ease:"back.out(1.7)"});var r=this.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2);showToast('Добавили в подборку!');});});
-function showToast(msg){
-  var n=document.createElement('div');
-  n.textContent=msg;
-  n.style.cssText='position:fixed;top:90px;left:50%;transform:translateX(-50%);background:#fff;color:#3d282e;padding:14px 26px;border-radius:14px;z-index:9999;font-weight:700;font-size:14px;box-shadow:0 12px 30px rgba(176,64,92,.2);border:2px solid rgba(212,91,120,.3)';
-  document.body.appendChild(n);
-  gsap.from(n,{y:-20,opacity:0,duration:.4,ease:'back.out(1.7)'});
-  setTimeout(function(){gsap.to(n,{opacity:0,y:-10,duration:.3,onComplete:function(){n.remove()}})},1800);
-}
-});
-</script>
-</body>
-</html>
